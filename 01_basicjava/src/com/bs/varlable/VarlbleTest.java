@@ -68,8 +68,10 @@ public class VarlbleTest {
 		//AGE = 50; 값변경불가능
 		
 		
-		
-		
+		System.out.println(2*11234564*45464564);
+		System.out.println(2*75564464*754564564);
+		System.out.println(2*9665454*415615644);
+	
 		
 	}
 }
