@@ -30,20 +30,20 @@ public class OperatorController {
 		// 변수(정수)에 1을 더하고 다시 그 변수에 저장시키는 연산
 		// ++변수 == 변수=변수+1;
 		
-		int count =0;
-		++count;//count=count+1;
-		count=count+1;
-		System.out.println(count);
-		count++;
-		count++;
-		System.out.println(count);
-		
-		count = 0;
-		--count;//count=count-1;
-		System.out.println(count);
-		--count;
-		count--;
-		System.out.println(count);
+		int count =3;
+//		++count;//count=count+1;
+//		count=count+1;
+//		System.out.println(count);
+//		count++;
+//		count++;
+//		System.out.println(count);
+//		
+//		count = 0;
+//		--count;//count=count-1;
+//		System.out.println(count);
+//		--count;
+//		count--;
+//		System.out.println(count);
 		
 		//++, -- 연산자의 위치에 따라 연산실행 순서가 변경
 		//다른연산자와 같이 연산실행했을때 순서가 변경된다.
@@ -180,14 +180,14 @@ public class OperatorController {
 		System.out.println("nam2==name4 :" + (name2==name4));//0x11과0x21이 저장된 상자가 다르기때문에 ==사용하더라고 다르다고나온다.
 		
 		//문자열의 동등비교는 equals를써야한다. 
-//		Scanner sc=new Scanner(System.in);
-//		System.out.print("이름 : ");
-//		String inputName=sc.nextLine();
-//		//System.out.println(inputName=="김아무");
-//		System.out.println(inputName.equals("김아무"));
-//		System.out.println("김아무".equals(inputName));
-//		//불일치비교
-//		System.out.println(!"김아무".equals(inputName));
+		Scanner sc=new Scanner(System.in);
+		System.out.print("이름 : ");
+		String inputName=sc.nextLine();
+		//System.out.println(inputName=="김아무");
+		System.out.println(inputName.equals("김아무"));
+		System.out.println("김아무".equals(inputName));
+		//불일치비교
+		System.out.println(!"김아무".equals(inputName));
 		
 		//대소비교하기
 		//숫자값만 가능하다.
@@ -259,12 +259,12 @@ public class OperatorController {
 		
 		//입력받은 나이가 19살 이상이고 경기도에 살면 true출력 아니면 false;
 		Scanner sc=new Scanner(System.in);
-		System.out.println("나이 : ");
+		System.out.print("나이 : ");
 		int age = sc.nextInt();
-		sc.nextLine();
-		System.out.println("주소(광역시,도) : ");
+		sc.nextLine();//버퍼비워주기
+		System.out.print("주소(광역시,도) : ");
 		String address=sc.nextLine();
-//		System.out.println(age>=19&&address.equals("경기도"));
+		System.out.println(age>=19&&address.equals("경기도"));
 //		
 		// or 연산
 		// 입력받은 주소가 경기도나 서울 일경우 true반환
@@ -289,8 +289,8 @@ public class OperatorController {
 		//입력받은 나이가 20대 이면서 입력받은 성별이 여자인 사람
 		System.out.print("입력한 성별(M/F) :");
 		char gender = sc.next().charAt(0);
-//		System.out.println("20대인가요? :" + (20<=age&&age<=29));
-//		System.out.println("여자인가요? :" + (gender=='F'));
+		System.out.println("20대인가요? :" + (20<=age&&age<=29));
+		System.out.println("여자인가요? :" + (gender=='F'));
 		System.out.println(20<=age&&age<=29&&gender=='F');
 		//char타입은 equals를사용하지않고 ==을사용한다.
 	
@@ -303,11 +303,11 @@ public class OperatorController {
 	//	System.out.print("사는곳 :");
 	//	System.out.println(address.equals("서울")||address.equals("인천")||30<=age&&<=39);
 		
-		boolean flag = address.equals("서울")||address.equals("인천")&&(30<=age&&age<39);
-		System.out.println("결과 : " + flag);
+		System.out.println(address.equals("서울")||address.equals("인천")&&(30<=age&&age<=39));
+		
 		//연산자 우선순위로 인해 서울이 and부터 시작해서 인천은false지만 서울이true이기에true다
 		//그래서 and를 앞으로 보내거나 괄호를붙인다.
-			
+		//boolean flag	
 
 		
 	}
