@@ -110,7 +110,7 @@ public class OperatorPractice {
 		System.out.print("C사원의 연봉 : ");
 		int income2 = sc.nextInt();
 		
-		double incentives = income * 1.4;  //2500*1은 어차피 2500이다 그러니간 곱하기 1.4를 해주면 0.4를 곱해서 더하는거랑 똑같은거다.
+		double incentives = income * 1.4;  //2500*1은 어차피 2500이다 그러니간 곱하기 1.4를 해주면 0.4를 곱해서 더하는거랑 똑같다.
 		double incentives1 = income1;
 		double incentives2 = income2 * 1.15;
 		
