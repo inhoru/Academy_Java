@@ -13,6 +13,7 @@ public class ConditionController {
 			System.out.println("10은 100보다 크다");
 		}
 		
+		
 		System.out.println("if중괄호 밖에 있는 로직은???");
 		
 		//특정수를 입력받아 200을 입력하면 200을 입력했군요! 출력

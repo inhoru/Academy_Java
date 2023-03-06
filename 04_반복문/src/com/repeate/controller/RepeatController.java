@@ -121,7 +121,7 @@ public class RepeatController {
 			if(!m.equals("끝")) { 
 				totalMsg+=m;
 			}
-		};
+		}
 		System.out.println(totalMsg);
 		
 		
