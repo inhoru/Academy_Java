@@ -37,7 +37,7 @@ public class ControlPractice {
 		}else if(num<0){
 			System.out.println("양수만 입력해주세요.");
 		}else {
-			System.out.println("홀수다.");
+			System.out.println("홀수다");
 		}
 	}
 }
