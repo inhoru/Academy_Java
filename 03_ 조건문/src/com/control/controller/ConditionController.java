@@ -229,7 +229,7 @@ public class ConditionController {
 		System.out.println("1. 윤쉐프");
 		System.out.println("2. 중국집");
 		System.out.println("3. 삼계탕");
-		System.out.println("4. 육개장");
+		System.out.println("4. 육개장.");
 		System.out.print("선택 : ");
 		int choice=sc.nextInt();
 		switch(choice) {

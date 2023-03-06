@@ -20,7 +20,7 @@ public class RepeatController {
 		System.out.println("안녕하세요");
 		System.out.println("안녕하세요");
 		System.out.println("안녕하세요");
-		System.out.println("안녕하세요");
+		System.out.println("안녕하세요.");
 		//반갑습니다. 100개
 		for(int i=1;i<=100;i++) {
 			System.out.println("반갑습니다!");
