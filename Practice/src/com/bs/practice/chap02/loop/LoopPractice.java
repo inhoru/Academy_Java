@@ -41,7 +41,7 @@ public class LoopPractice {
 				System.out.println(i);
 			}
 		if (su < 1) {
-			System.out.println("1 이상의 숫자를 입력해주세요.");
+			System.out.println("1 이상의 숫자를 입력해주세요. ");
 		}
 	}
 
