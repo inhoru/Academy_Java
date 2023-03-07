@@ -248,6 +248,12 @@ public class RepeatController {
 			}
 			System.out.println();
 		}
+		
+	}
+	public void baseball() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("가위/바위/보 중에 하나를 입력하세요");
+		
 	}
 
 }

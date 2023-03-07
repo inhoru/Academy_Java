@@ -8,6 +8,7 @@ public class Main {
 		//new RepeatController().forApplication();
 		//new RepeatController().empInputData();
 		//new RepeatController().forApplication2();
-		new RepeatController().forInfor();
+		//new RepeatController().forInfor();
+		new RepeatController().baseball();
 	}
 }
