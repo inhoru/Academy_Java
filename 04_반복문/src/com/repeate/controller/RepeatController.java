@@ -166,7 +166,7 @@ public class RepeatController {
 			int pay = sc.nextInt();
 			System.out.print("보너스 :");
 			double bonner = sc.nextDouble();
-			// sc.nextLine();//반복하기전 마지막 라인이 nextDouble이였기에 버퍼를비워준다. 위에적었기때문에 위에께필요업성진다.
+			// sc.nextLine();//반복하기전 마지막 라인.이 nextDouble이였기에 버퍼를비워준다. 위에적었기때문에 위에께필요업성진다.
 			empInfo += (name + " " + age + " " + gender + " " + pay + " " + bonner + "\n");
 
 		}
