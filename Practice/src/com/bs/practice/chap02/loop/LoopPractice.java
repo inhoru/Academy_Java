@@ -224,20 +224,31 @@ public class LoopPractice {
 
 					case "+":
 						System.out.println(
-								" " + firstNumber + msg + secondNumber + " " + " = " + (firstNumber + secondNumber));
+								"" + firstNumber + msg + secondNumber + "" + " = " + (firstNumber + secondNumber));
 						flag = false;
 						break;
 
 					case "-":
 						System.out.println(
-								" " + firstNumber + msg + secondNumber + " " + " = " + (firstNumber - secondNumber));
+								"" + firstNumber + msg + secondNumber + "" + " = " + (firstNumber - secondNumber));
+						flag = false;
+						break;
+					case "/":
+						System.out.println(
+								"" + firstNumber + msg + secondNumber + "" + " = " + (firstNumber / secondNumber));
+						flag = false;
+						break;
+					case "%":
+						System.out.println(
+								"" + firstNumber + msg + secondNumber + "" + " = " + (firstNumber % secondNumber));
 						flag = false;
 						break;
 
-//					case "exit":
-//						System.out.println("프로그램을 종료합니다.");
-//						flag = true;
-//						break;
+					case "*":
+						System.out.println(
+								"" + firstNumber + msg + secondNumber + "" + " = " + (firstNumber * secondNumber));
+						flag = false;
+						break;
 
 					default:
 						System.out.println("없는 연산자입니다. 다시 입력해주세요.");
@@ -252,12 +263,36 @@ public class LoopPractice {
 				flag = false;
 			}
 
-			if(flag == false) {
+			if (flag == false) {
 				break;
 			}
-			//break;어렵다..
+			// break;어렵다..
 		}
 
+	}
+
+	public void practice13() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 입력 : ");
+		int number = sc.nextInt();
+		for (int i = 1; i <= number; i++) {
+			for (int j = 0; j < i; j++) {
+				System.out.print("*");
+
+			}
+			System.out.println();
+		}
+	}
+	public void practice14() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("정수 입력 : ");
+		int number = sc.nextInt();
+		for(int i = 1; i<=number; i++) {
+			for(int j =5; j>i;j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
 	}
 
 }
