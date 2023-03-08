@@ -18,7 +18,11 @@ public class Run {
 		//new LoopPractice().practice11();
 		//new LoopPractice().practice12();
 		//new LoopPractice().practice13();
-		new LoopPractice().practice14();
+		//new LoopPractice().practice14();
+		//new LoopPractice().practice15();
+		//new LoopPractice().practice16();
+		//new LoopPractice().practice17();
+		new LoopPractice().practice18();
 
 	}
 

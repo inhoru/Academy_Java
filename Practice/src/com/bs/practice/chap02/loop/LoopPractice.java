@@ -283,16 +283,115 @@ public class LoopPractice {
 			System.out.println();
 		}
 	}
+
 	public void practice14() {
 		Scanner sc = new Scanner(System.in);
 		System.out.println("정수 입력 : ");
 		int number = sc.nextInt();
-		for(int i = 1; i<=number; i++) {
-			for(int j =5; j>i;j--) {
+		for (int i = 1; i <= number; i++) {
+			for (int j = 5; j > i; j--) {
 				System.out.print("*");
 			}
 			System.out.println();
 		}
+
+	}
+
+	public void practice15() {
+		Scanner scanner = new Scanner(System.in);
+
+		System.out.print("숫자 : ");
+		int number = scanner.nextInt();
+
+		if (number < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+		} else {
+			boolean flag = true;
+			for (int i = 2; i < number; i++) { // 1로나누면 나머지가0이되기에 2부터시작
+				if (number % i == 0) {
+					flag = false;
+
+				}
+			}
+			if (flag) {
+				System.out.println(number + "는 소수입니다.");
+			} else {
+				System.out.println(number + "는 소수가 아닙니다.");
+			}
+		}
+	}
+
+	public void practice16() {
+		Scanner scanner = new Scanner(System.in);
+
+		int number = 0;
+		while (number < 2) {
+			System.out.print("숫자 : ");
+			number = scanner.nextInt();
+
+			if (number < 2) {
+				System.out.println("잘못 입력하셨습니다.");
+			}
+		}
+
+		boolean falg = true;
+		for (int i = 2; i < number; i++) {
+			if (number % i == 0) {
+				falg = false;
+
+			}
+		}
+		if (falg) {
+			System.out.println(number + "는 소수입니다.");
+		} else {
+			System.out.println(number + "는 소수가 아닙니다.");
+		}
+	}
+
+	public void practice17() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("숫자 : ");
+		int number = sc.nextInt();
+
+		int count = 0;
+		if (number < 2) {
+			System.out.println("잘못 입력하셨습니다.");
+		} else {
+			for (int i = 2; i <= number; i++) {
+				boolean falg = true;
+				for (int j = 2; j < i; j++) {
+					if (i % j == 0) {
+						falg = false;
+						break;
+					}
+
+				}
+				if (falg) {
+					System.out.print(i + " ");
+					count++;
+				}
+			}
+			System.out.println("\n2부터 " + number + "까지 소우의 개수는" + count + "입니다.");
+
+		}
+	}
+
+	public void practice18() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("자연수 하나를 입력하세요 : ");
+		int number = sc.nextInt();
+		int count = 0;
+		boolean falg = false;
+		for (int i = 2; i <= number; i++) {
+			if (i % 2 == 0 || i % 3 == 0) {
+				System.out.print(i + " ");
+				if (i % 2 == 0 && i % 3 == 0) {
+					count++;
+				}
+
+			}
+		}
+		System.out.println("\ncount : " + count);
 	}
 
 }
