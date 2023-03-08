@@ -255,7 +255,7 @@ public class LoopPractice {
 			if(flag == false) {
 				break;
 			}
-			//break;
+			//break;어렵다..
 		}
 
 	}
