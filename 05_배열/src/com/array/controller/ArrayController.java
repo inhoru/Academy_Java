@@ -1,5 +1,7 @@
 package com.array.controller;
 
+import java.util.Scanner;
+
 public class ArrayController {
 	public void basicArray() {
 		//기본배열 활용하기
@@ -70,6 +72,48 @@ public class ArrayController {
 		System.out.println(intArr.length);
 		System.out.println(names.length);
 		
+		//반복문을 이용해서 배열을 초기화하기
+		//int 배열을 10개를 할당하고 각 저장공간에 1~10까지 수를 대입하기
+		int[] number = new int[10];
+		for(int i =0;i<number.length;i++) {
+			number[i]=i+1;//i++<-이녀석은 i값자체를 바꾼다 i+1은 연산결과만바꾼다
+			
+		}
+		for(int i = 0;i<number.length;i++) {
+			System.out.println(number[i]);
+		}
 		
-	}
+		//학생 5명의 키를 입력받아 저장하는 기능 구현하기
+		//저장 후 출력하기
+//		Scanner sc = new Scanner(System.in);
+//		double [] student = new double[5];//더블형공간5개생성 
+//		for(int i =0;i<student.length;i++) {
+//			System.out.print((i+1) +"번학생 키 입력 : ");
+//			//double height = sc.nextDouble();
+//			student[i]= sc.nextDouble();//이미 위에서 더블로선언햇기때문에 따로할필요가없다.
+//		}
+//		for(int i= 0;i<student.length;i++) {
+//			System.out.println((i+1) +"번학생 키 :"+student[i]);
+//			
+//		}
+		
+		//배열선언시에 대입할 값이 정해져있다면
+		//배열선언과 동시에 값을 초기화할 수 있다.
+		char [] alpha = {'a','b','c','d','e'};
+		for(int i=0;i<alpha.length;i++) {
+			System.out.println(i +" "+ alpha[i]);
+		}
+		char[] alpha2 =new char[] {'A','B','C','D',};
+		for(int i =0  ;i<alpha2.length;i++) {
+			System.out.println(i+" "+ alpha2[i]);
+		}
+		//alpha = {'가','나','다}; <-이렇게되어있는 부분은 반드시선언과동시에 초기화 라인안에서 해야한다.
+		alpha = new char [] {'가','나','다'};//선언한구문은 다시 선언할려면 new를써야한다이렇게 써야 사용가능하다 
+		
+		}
+		
+		
+		
+		
+	
 }
