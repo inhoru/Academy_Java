@@ -121,7 +121,7 @@ public class ArrayPractice {
 		}
 		System.out.println(msg + "\n" + "총합 : " + result);
 
-	}
+	}//
 	
 
 }
