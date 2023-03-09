@@ -20,7 +20,9 @@ public class Run {
 		//new ArrayPractice().practice2();
 		//new ArrayPractice().practice3();
 		//new ArrayPractice().practice4();
-		new ArrayPractice().practice5();
+		//new ArrayPractice().practice5();
+		//new ArrayPractice().practice6();
+		new ArrayPractice().practice7();
 	}
 
 }
