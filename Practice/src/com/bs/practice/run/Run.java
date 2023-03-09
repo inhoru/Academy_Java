@@ -1,6 +1,7 @@
 package com.bs.practice.run;
 
 import com.bs.practice.func.OperatorPractice;
+import com.bs.practice.array.ArrayPractice;
 
 public class Run {
 	public static void main(String[] args) {
@@ -14,7 +15,12 @@ public class Run {
 		//new OperatorPractice().practice8();
 		//new OperatorPractice().practice9();
 		//new OperatorPractice().practice10();
-		new OperatorPractice().practice11();
+		//new OperatorPractice().practice11();
+		//new ArrayPractice().practice1();
+		//new ArrayPractice().practice2();
+		//new ArrayPractice().practice3();
+		//new ArrayPractice().practice4();
+		new ArrayPractice().practice5();
 	}
 
 }
