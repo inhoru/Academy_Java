@@ -191,91 +191,270 @@ public class ArrayController {
 		int temp = testArr[0];// 배열의 이전값을 저장시켜넣고 이전값을 넣어서 바꾼다.
 		testArr[0] = testArr[1];
 		testArr[1] = temp;
-		
-		
+
 		System.out.println();
 		for (int i = 0; i < testArr.length; i++) {
 			System.out.print(testArr[i] + " ");
-			
+
 		}
-		for(int i = 0; i<testArr.length;i++) {
-			for(int j=0;j<i;j++) {
+		for (int i = 0; i < testArr.length; i++) {
+			for (int j = 0; j < i; j++) {
 //				int pre = testArr[j];
 //				int next = testArr[i];
-				if(testArr[i]<testArr[j]) {
-				//if(testArr[i]>testArr[j]) { 내림차순 정리
-					int t =testArr[i];
+				if (testArr[i] < testArr[j]) {
+					// if(testArr[i]>testArr[j]) { 내림차순 정리
+					int t = testArr[i];
 					testArr[i] = testArr[j];
 					testArr[j] = t;
-					
-					
+
 				}
 			}
 		}
 		System.out.println();
-		for(int i = 0;i<testArr.length;i++) {
-			System.out.print(testArr[i]+" ");
+		for (int i = 0; i < testArr.length; i++) {
+			System.out.print(testArr[i] + " ");
 		}
-		
-		//배열 길이를 정하면 고정
-		String [] oriName= {"유병승","홍길동","김유신"};
+
+		// 배열 길이를 정하면 고정
+		String[] oriName = { "유병승", "홍길동", "김유신" };
 		oriName = new String[6];
-		for(int i = 0;i<oriName.length;i++) {
-			System.out.println(oriName[i]);//안된다 초기화했기때문에
+		for (int i = 0; i < oriName.length; i++) {
+			System.out.println(oriName[i]);// 안된다 초기화했기때문에
 		}
 	}
+
 	public void arraysCopyTest() {
-		//배열의 복사를 알아보자.
-		//배열의 복사
-		//1. 얕은 복사 : 원본값을 공유하는 방식
-		//2. 깊은 복수 : 별도의 저장공간을 생성해서 데이터를 따로 관리하는 방식
-		int [] num= {1,2,3,4,5};
-		//얕은 복사 -> 주소를 복사한다.
-		int [] copynum=num;
+		// 배열의 복사를 알아보자.
+		// 배열의 복사
+		// 1. 얕은 복사 : 원본값을 공유하는 방식
+		// 2. 깊은 복수 : 별도의 저장공간을 생성해서 데이터를 따로 관리하는 방식
+		int[] num = { 1, 2, 3, 4, 5 };
+		// 얕은 복사 -> 주소를 복사한다.
+		int[] copynum = num;
 		System.out.println(num);
-		System.out.println("num" + Arrays.toString(num));//for문안쓰고 전체를 추력하는 기능
+		System.out.println("num" + Arrays.toString(num));// for문안쓰고 전체를 추력하는 기능
 		System.out.println("copynum" + Arrays.toString(copynum));
 		System.out.println("num[0] : " + num[0]);
 		System.out.println("copynum[0] : " + copynum[0]);
-		//주소값을 공유하기때문에 저장소가 한개!
-		num[0] = 100;//위에서 주소값을 공유했기때문에 하나에만 넣어도 같아진다.
+		// 주소값을 공유하기때문에 저장소가 한개!
+		num[0] = 100;// 위에서 주소값을 공유했기때문에 하나에만 넣어도 같아진다.
 		System.out.println("num : " + num[0]);
 		System.out.println("copynum : " + copynum[0]);
-		
-		//깊은복사 -> 값자체를 복사해서 새로운 저장소에 저장
-		int[]deepcopy =new int[num.length];
-		for(int i=0;i<num.length;i++) {
-			deepcopy[i]=num[i];
+
+		// 깊은복사 -> 값자체를 복사해서 새로운 저장소에 저장
+		int[] deepcopy = new int[num.length];
+		for (int i = 0; i < num.length; i++) {
+			deepcopy[i] = num[i];
 		}
-		System.out.println("num : " +Arrays.toString(num));
-		System.out.println("deepcopy : " +Arrays.toString(deepcopy));
-		num[1]=200;//num에있는 주소를 수정한거지 deepcopy에있는 주소를 수정한게아니다.
-		System.out.println("num : " +Arrays.toString(num));
-		System.out.println("deepcopy : " +Arrays.toString(deepcopy));
-		
-		//java에서 제공하는 기능을 이용해서 깊은복사하기
-		//Arrays클래스에서 제공하는 copyof()기능 이용하기
-		int[] copy2=Arrays.copyOf(num,2);//엎애꺼를 뒤에꺼까지 복사하겟다
-		System.out.println("copy2 : "+Arrays.toString(copy2));
+		System.out.println("num : " + Arrays.toString(num));
+		System.out.println("deepcopy : " + Arrays.toString(deepcopy));
+		num[1] = 200;// num에있는 주소를 수정한거지 deepcopy에있는 주소를 수정한게아니다.
+		System.out.println("num : " + Arrays.toString(num));
+		System.out.println("deepcopy : " + Arrays.toString(deepcopy));
+
+		// java에서 제공하는 기능을 이용해서 깊은복사하기
+		// Arrays클래스에서 제공하는 copyof()기능 이용하기
+		int[] copy2 = Arrays.copyOf(num, 2);// 엎애꺼를 뒤에꺼까지 복사하겟다
+		System.out.println("copy2 : " + Arrays.toString(copy2));
 //		copy2[3]= -100;
 //		System.out.println("num : " +Arrays.toString(num));
 //		System.out.println("deepcopy : " +Arrays.toString(copy2));
-		
-		//배열전체를 깊은복사를 할때 clone() 이용해도된다.;
-		copy2=num.clone();
-		System.out.println("copy2"+Arrays.toString(copy2));
-		
-		//System.arraycopy() 이용
-		//첫번째 : 원본배열
-		//두번째 : 원본배열 시작인덱스
-		//세번째 : 복사된 배열
-		//네번째 : 복사될 배열의 시작인덱스
-		//다섯번째 : 복사할 데이터 수(길이)
-		String [] names= {"유병승","홍길동","김유신"};
-		String [] extend = new String[names.length+5];
+
+		// 배열전체를 깊은복사를 할때 clone() 이용해도된다.;
+		copy2 = num.clone();
+		System.out.println("copy2" + Arrays.toString(copy2));
+
+		// System.arraycopy() 이용
+		// 첫번째 : 원본배열
+		// 두번째 : 원본배열 시작인덱스
+		// 세번째 : 복사된 배열
+		// 네번째 : 복사될 배열의 시작인덱스
+		// 다섯번째 : 복사할 데이터 수(길이)
+		String[] names = { "유병승", "홍길동", "김유신" };
+		String[] extend = new String[names.length + 5];
 		System.arraycopy(names, 1, extend, 3, 2);
-		for(int i=0;i<extend.length;i++) {
-			System.out.print(extend[i]+" ");
+		for (int i = 0; i < extend.length; i++) {
+			System.out.print(extend[i] + " ");
+		}
+		System.out.println();
+
+	}
+
+	public void doubleArray() {
+		// 2차원배열에 대해 알아보자
+		// 배열저장소 두개가 연결되어있는 구조
+		// 저장소는 바둑판처럼 저장구조를 가지고있음
+		int[][] intArr;
+		intArr = new int[3][3];
+		System.out.println(intArr);
+		System.out.println(intArr[0]);
+		System.out.println(intArr[1]);
+		System.out.println(intArr[0][0]);
+		System.out.println(intArr[0][1]);
+		System.out.println(intArr[0][2]);
+		System.out.println(intArr[1][0]);
+		System.out.println(intArr[1][1]);
+		System.out.println(intArr[1][2]);
+
+		for (int i = 0; i < intArr.length; i++) {
+			for (int j = 0; j < intArr.length; j++) {
+				System.out.print(intArr[i][j]);
+
+			}
+			System.out.println();
+		}
+		intArr[0][0] = 1;
+		intArr[0][1] = 2;
+		intArr[0][2] = 3;
+		intArr[1][0] = 4;
+		for (int i = 0; i < intArr.length; i++) {// [][] 중에 앞에인수를 반복
+			for (int j = 0; j < intArr[i].length; j++) {// intArr[i].length는 뒤에꺼반복
+				System.out.print(intArr[i][j]);
+
+			}
+			System.out.println();
+		}
+//		int[] arr=new int[10];
+//		arr.length;
+		// 3*3 2차원배열을 생성하고
+		// 123
+		// 123
+		// 123 을 각 인덱스에 정하고 출력하기
+
+		int[][] intArr1 = new int[3][3];
+		for (int i = 0; i < intArr1.length; i++) {
+			for (int j = 0; j < intArr1[i].length; j++) {
+				intArr[i][j] = j + 1;
+
+			} // 입력기능 따로만들기
+
+		}
+		for (int i = 0; i < intArr1.length; i++) {
+			for (int j = 0; j < intArr1[i].length; j++) {
+				System.out.print(intArr[i][j]);
+			}
+			System.out.println();// 출력기능 을 따로만들기
+		}
+
+		// 1234
+		// 5678
+		// 9 10 11 12
+
+		int[][] intArr2 = new int[3][4];
+		int count = 0;
+		for (int i = 0; i < intArr2.length; i++) {
+			for (int j = 0; j < intArr2[i].length; j++) {
+				// intArr2[i][j]=(i*4)+(j+1);
+				intArr2[i][j] = count++;
+
+			}
+		}
+
+		for (int i = 0; i < intArr2.length; i++) {
+			for (int j = 0; j < intArr2[i].length; j++) {
+				System.out.print(intArr2[i][j] + " ");
+			}
+			System.out.println();
+		}
+		// 2차원배열의 선언과 동시에 초기화
+		String[][] study = { { "김중근", "홍승우", "윤준호", "김현영" }, { "김찬은", "홍성현", "나빈", "이성진" }, { "김재훈", "이다영", "조장흠" },
+				{ "김예린", "윤나라", "최인호", "최주영", "이동제" }, { "윤지환", "강민기", "최솔" }, { "조윤진", "정상준", "최하리", "이은지" } };
+		for (int i = 0; i < study.length; i++) {
+			for (int j = 0; j < study[i].length; j++) {
+				System.out.print(study[i][j] + " ");
+			}
+			System.out.println();
+		}
+		// 최주영의 조를 찾기 인원수 출력
+		// 최솔씨의 조를 찾고 인원수 출력
+		// 나빈씨의 조를 찾고 인원수 출력
+		// 이름을 입력받아서 찾으세요 없는 이름을 입력하면 없는 조원입니다 출력
+		Scanner sc = new Scanner(System.in);
+		System.out.print("입력 :");
+		String name = sc.next();
+		String msg = "없는 조원입니다.";
+		for (int i = 0; i < study.length; i++) {
+			for (int j = 0; j < study[i].length; j++) {
+				if (study[i][j].equals(name)) {
+					// System.out.println((i+1)+"조 인원수 :"+study[i].length);
+					msg = (i + 1) + "조 인원수 :" + study[i].length;
+					msg = Arrays.toString(study[i]);
+
+					break;
+
+				}
+
+			}
+		}
+		System.out.println(msg);
+
+	}
+
+	// 배열에 대한 배열 데이트를 순
+	public void extraTest() {
+		int[] intArr = { 1, 2, 3, 4, 5, 6, };
+		// 기본 for문 이용해서 각 인덱스에 접근함.
+		for (int i = 0; i < intArr.length; i++) {
+			System.out.println(intArr[i]);
+
+		}
+		// forEach문을 이용해서 데이터 순회하기
+		// for(자료형 변수명 : 배열명|| CollectionFramework){ }
+		System.out.println("forEach문을 이용해서 출력하기");// for문대신 사용가능
+		for (int d : intArr) {
+			if (d % 2 == 0) {
+				System.out.println(d);
+			}
+			// forEach문은 배열에 있는 값을 수정할때는 사용할 수 없다.
+			String[] hobby = { "농구", "자전거", "게임", "코딩" };
+			for (String h : hobby) {
+				if (h.equals("코딩"))
+					h = "운동";// 지역변수를바꿧기때문에 안바뀐다.
+				// hobby가 는 바뀌지않는다.
+
+				System.out.println(h);
+
+			}
+
+			// 배열에 중복값없이 저장하기
+			// 임의의 정수 10개 저장하기
+			// 1~50
+			// (Math.random()
+			// 중복값없이 출력
+			int[] randomNum = new int[10];
+			for (int i = 0; i < randomNum.length; i++) {
+				randomNum[i] = (int) (Math.random() * 10) + 1;
+				for (int j = 0; j < i; j++) {
+					if (randomNum[i] == randomNum[j]) {
+						i--;// 마이너스를해서 다시 외곽포문으로 돌아가서 중복값에새로운값을넣는다.
+						break;
+
+					}
+				}
+
+			}
+			for (int i : randomNum) {
+				System.out.print(i + " ");
+			}
+			System.out.println();
+		}
+		// 로또만들기!!
+		// 1~45까지의 중복값없이 6자리로저장하기
+		int[] lotto = new int[6];
+
+		for (int i = 0; i < lotto.length; i++) {
+			lotto[i] = (int) (Math.random() * 45) + 1;
+			for (int j = 0; j < i; j++) {
+				if (lotto[i] == lotto[j]) {
+					i--;
+					break;
+				}
+
+			}
+
+		}
+		for (int i : lotto) {
+			System.out.print(i + " ");
 		}
 		System.out.println();
 	}
