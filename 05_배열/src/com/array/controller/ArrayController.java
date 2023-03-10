@@ -457,6 +457,20 @@ public class ArrayController {
 			System.out.print(i + " ");
 		}
 		System.out.println();
+		//up&down게임만들기
+		//램덤으로 1~50까지 수중 한개를 저장
+		//사용자에게 값을 입력받아 램덤값과 비교하고 램덤값이 크면 up출력
+		//작은면 Down출력 맞추면 정답입니다!! 짝짞짝! 출력 정답을 맞출때까지 진행
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("입력 : "); 
+		int number = sc.nextInt();
+		int random = (Math.random()* 50)+1;
+		
+		
+		
 	}
+	
+	
 
 }
