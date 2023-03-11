@@ -33,7 +33,7 @@ public class ConstructorMain {
 		System.out.println(m3.kind+" "+m3.name+" "+ m3.weight+"kg "+m3.length+"cm "+
 		m3.home);
 
-		
+		//
 	}
 
 }
