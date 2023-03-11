@@ -9,10 +9,10 @@ public class Main {
 		//new RepeatController().empInputData();
 //		new RepeatController().forApplication2();
 		//new RepeatController().forInfor();
-//		new RepeatController().whileTest();
-		//new RepeatController().whileCalculator();
+		//new RepeatController().whileTest();
+		new RepeatController().whileCalculator();
 //		new RepeatController().continueBreakTest();
 		//new RepeatController().randomTest();
-		new RepeatController().rockpaperscissors();
+		//new RepeatController().rockpaperscissors();
 	}
 }
