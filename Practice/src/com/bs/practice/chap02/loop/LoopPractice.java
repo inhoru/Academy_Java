@@ -394,4 +394,80 @@ public class LoopPractice {
 		System.out.println("\ncount : " + count);
 	}
 
+	public void practice19() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력 : ");
+		int stars = sc.nextInt();
+		for (int i = 1; i <= stars; i++) {
+			for (int j = stars; j > 0; j--) {
+				if (i < j) {
+					System.out.print(" ");
+
+				} else {
+					System.out.print("*");
+
+				}
+			}
+			System.out.println("");
+		}
+
+	}
+
+	public void practice20() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력 : ");
+		int stars = sc.nextInt();
+		for (int i = 0; i < stars; i++) {
+			for (int j = 0; j <= i; j++) {
+				System.out.print("*");
+			}
+			System.out.println("");
+		}
+		for (int i = 1; i < stars; i++) {
+			for (int j = stars; j > i; j--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+
+	public void practice21() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력 : ");
+		int stars = sc.nextInt();
+		for (int i = 0; i < stars; i++) {
+			for (int j = 0; j < 3 - i; j++) {
+				System.out.print(" ");
+			}
+			for (int j = 0; j < 2 * i + 1; j++) {
+				System.out.print("*");
+
+			}
+			System.out.println("");
+		}
+	}
+
+	public void practice22() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수 입력 : ");
+		int stars = sc.nextInt();
+		for (int i = 1; i <= stars; i++) {
+			for (int j = 1; j <= stars; j++) {
+				if (i == 1 || i == stars) {
+					System.out.print("*");
+				} else {
+					if (j == 1 || j == stars) {
+						System.out.print("*");
+					} else {
+						System.out.print(" ");
+					}
+
+				}
+			}
+			System.out.println("");
+
+		}
+
+	}
+
 }
