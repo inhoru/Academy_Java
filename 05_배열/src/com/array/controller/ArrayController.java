@@ -324,14 +324,14 @@ public class ArrayController {
 		int[][] intArr1 = new int[3][3];
 		for (int i = 0; i < intArr1.length; i++) {
 			for (int j = 0; j < intArr1[i].length; j++) {
-				intArr[i][j] = j + 1;
+				intArr1[i][j] = j + 1;
 
 			} // 입력기능 따로만들기
 
 		}
 		for (int i = 0; i < intArr1.length; i++) {
 			for (int j = 0; j < intArr1[i].length; j++) {
-				System.out.print(intArr[i][j]);
+				System.out.print(intArr1[i][j]);
 			}
 			System.out.println();// 출력기능 을 따로만들기
 		}
@@ -376,8 +376,8 @@ public class ArrayController {
 		for (int i = 0; i < study.length; i++) {
 			for (int j = 0; j < study[i].length; j++) {
 				if (study[i][j].equals(name)) {
-					// System.out.println((i+1)+"조 인원수 :"+study[i].length);
-					msg = (i + 1) + "조 인원수 :" + study[i].length;
+					System.out.println((i + 1) + "조 인원수 :" + study[j].length);
+					// msg = (i + 1) + "조 인원수 :" + study[i].length;
 					msg = Arrays.toString(study[i]);
 
 					break;
@@ -390,7 +390,7 @@ public class ArrayController {
 
 	}
 
-	// 배열에 대한 배열 데이트를 순
+	// 배열에 대한 배열 데이트를 순회하기
 	public void extraTest() {
 		int[] intArr = { 1, 2, 3, 4, 5, 6, };
 		// 기본 for문 이용해서 각 인덱스에 접근함.
@@ -405,16 +405,15 @@ public class ArrayController {
 			if (d % 2 == 0) {
 				System.out.println(d);
 			}
-			// forEach문은 배열에 있는 값을 수정할때는 사용할 수 없다.
-			String[] hobby = { "농구", "자전거", "게임", "코딩" };
-			for (String h : hobby) {
-				if (h.equals("코딩"))
-					h = "운동";// 지역변수를바꿧기때문에 안바뀐다.
-				// hobby가 는 바뀌지않는다.
+		}
+		// forEach문은 배열에 있는 값을 수정할때는 사용할 수 없다.
+		String[] hobby = { "농구", "자전거", "게임", "코딩" };
+		for (String h : hobby) {
+			if (h.equals("코딩"))
+				h = "운동";// 지역변수를바꿧기때문에 안바뀐다.
+			// hobby가 는 바뀌지않는다.
 
-				System.out.println(h);
-
-			}
+			System.out.println(h);
 
 			// 배열에 중복값없이 저장하기
 			// 임의의 정수 10개 저장하기
@@ -457,20 +456,33 @@ public class ArrayController {
 			System.out.print(i + " ");
 		}
 		System.out.println();
-		//up&down게임만들기
-		//램덤으로 1~50까지 수중 한개를 저장
-		//사용자에게 값을 입력받아 램덤값과 비교하고 램덤값이 크면 up출력
-		//작은면 Down출력 맞추면 정답입니다!! 짝짞짝! 출력 정답을 맞출때까지 진행
-		
+		// up&down게임만들기
+		// 램덤으로 1~50까지 수중 한개를 저장
+		// 사용자에게 값을 입력받아 램덤값과 비교하고 램덤값이 크면 up출력
+		// 작은면 Down출력 맞추면 정답입니다!! 짝짞짝! 출력 정답을 맞출때까지 진행
 		Scanner sc = new Scanner(System.in);
-		System.out.println("입력 : "); 
-		int number = sc.nextInt();
-		int random = (Math.random()* 50)+1;
-		
-		
-		
+
+		int[] random = new int[1];
+		random[0] = (int) (Math.random() * 50) + 1;
+		boolean falg = true;
+		while (falg) {
+			for (int i = 0; i < 1; i++) {
+				System.out.println("입력 : ");
+				int number = sc.nextInt();
+				if (random[0] < number && number < 51) {
+					System.out.println("Down");
+				} else if (random[0] > number) {
+					System.out.println("UP");
+
+				} else if (random[0] == number) {
+					System.out.println("정답입니다!! 짝짝짞");
+					falg = false;
+				} else if (number > 50) {
+					System.out.println("50이하의숫자만입력해주세요.");
+				}
+			}
+
+		}
 	}
-	
-	
 
 }
