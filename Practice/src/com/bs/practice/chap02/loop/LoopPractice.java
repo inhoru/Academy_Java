@@ -470,4 +470,160 @@ public class LoopPractice {
 
 	}
 
+	public void practice23() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력 : ");
+		int number = sc.nextInt();
+		for (int i = 1; i <= number; i++) {
+			if (i % 2 == 0) {
+				System.out.print("박");
+			} else {
+				System.out.print("수");
+			}
+		}
+		System.out.println("");
+	}
+
+	public void practice24() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("정수입력(1~9) : ");
+		int number = sc.nextInt();
+		for (int i = 1; i <= 9; i++) {
+			if (number < 10 && number > 0) {
+				System.out.println(number + "X" + i + "=" + (number * i));
+			} else {
+				System.out.println("잘못입력하셨습니다. 프로그램종료합니다.");
+				break;
+			}
+
+		}
+	}
+
+	public void practice25() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열 입력 : ");
+		String msg = sc.next();
+		System.out.print("문자 입력 : ");
+		char ch = sc.next().charAt(0);
+		boolean falg = false;
+		for (int i = 0; i < msg.length(); i++) {
+			char c = msg.charAt(i);
+			if (!(c >= 'a' && c <= 'z') && !(c >= 'A' && c <= 'Z')) {
+				falg = true;
+
+			}
+		}
+
+		if (falg) {
+			System.out.println("영문자가 아닙니다.");
+		} else {
+			int count = 0;
+			for (int i = 0; i < msg.length(); i++) {
+				if (msg.charAt(i) == ch) {
+					count++;
+				}
+			}
+			System.out.println("포함된 갯수 : " + count);
+		}
+	}
+
+	public void practice26() {
+		Scanner sc = new Scanner(System.in);
+		String person1 = "";
+		String person2 = "";
+		String person3 = "";
+		String person4 = "";
+		String person5 = "";
+		for (int i = 1; i <= 5; i++) {
+			System.out.print("이름 : ");
+			String name = sc.next();
+			System.out.print("나이 : ");
+			int age = sc.nextInt();
+			System.out.print("주소 : ");
+			sc.nextLine();
+			String address = sc.nextLine();
+			System.out.print("키 : ");
+			double height = sc.nextDouble();
+			System.out.print("몸무게 : ");
+			double weight = sc.nextDouble();
+			System.out.print("연락처 : ");
+			sc.nextLine();
+			String number = sc.nextLine();
+			switch (i) {
+			case 1:
+				person1 += name + " " + age + "세 " + address + " " + height + "cm " + weight + "kg " + number;
+				break;
+			case 2:
+				person2 += name + " " + age + "세 " + address + " " + height + "cm " + weight + "kg " + number;
+				break;
+			case 3:
+				person3 += name + " " + age + "세 " + address + " " + height + "cm " + weight + "kg " + number;
+				break;
+			case 4:
+				person4 += name + " " + age + "세 " + address + " " + height + "cm " + weight + "kg " + number;
+				break;
+			case 5:
+				person5 += name + " " + age + "세 " + address + " " + height + "cm " + weight + "kg " + number;
+				break;
+			}
+		}
+		System.out.println(person1);
+		System.out.println(person2);
+		System.out.println(person3);
+		System.out.println(person4);
+		System.out.println(person5);
+	}
+
+	public void practice27() {
+		Scanner sc = new Scanner(System.in);
+		boolean falg = false;
+		int count = 0;
+		int exp = 0;
+		System.out.println("0.사냥시작 1.오크사냥 2.용사냥 3.사람사냥 99.끝내기\n입력 : ");
+		int number = sc.nextInt();
+		do {
+			switch (number) {
+			case 0:
+				System.out.println("사냥을 시작합니다.");
+				System.out.print("입력 : ");
+				number = sc.nextInt();
+				falg =true;
+				break;
+
+			case 1:
+				System.out.println("오크사냥완료 +1 exp");
+				count++;
+				exp += 1;
+				System.out.print("입력 : ");
+				number = sc.nextInt();
+				falg = true;
+				break;
+
+			case 2:
+				System.out.println("용 사냥 완료 +15exp");
+				count++;
+				exp += 15;
+				System.out.print("입력 : ");
+				number = sc.nextInt();
+				falg = true;
+				break;
+			case 3:
+				System.out.println("사람 사냥 완료 +20exp");
+				count++;
+				exp += 20;
+				System.out.print("입력 : ");
+				number = sc.nextInt();
+				falg = true;
+				break;	
+
+			case 99:
+				System.out.println("사냥을마쳤습니다.");
+				System.out.print("사냥한 몹의 수는 " + count + "마리, " + "획득한 경험치는 " + exp + "입니다.");
+				falg = false;
+				break;
+
+			}
+		} while (falg);
+	}
+
 }
