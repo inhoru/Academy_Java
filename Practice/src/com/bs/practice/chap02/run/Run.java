@@ -22,7 +22,16 @@ public class Run {
 		//new LoopPractice().practice15();
 		//new LoopPractice().practice16();
 		//new LoopPractice().practice17();
-		new LoopPractice().practice18();
+		//new LoopPractice().practice18();
+		//new LoopPractice().practice19();
+		//new LoopPractice().practice20();
+		//new LoopPractice().practice21();
+		//new LoopPractice().practice22();
+		//new LoopPractice().practice23();
+		//new LoopPractice().practice24();
+		//new LoopPractice().practice25();
+		//new LoopPractice().practice26();
+		new LoopPractice().practice27();
 
 	}
 
