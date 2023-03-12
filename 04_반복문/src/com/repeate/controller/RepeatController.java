@@ -333,7 +333,7 @@ public class RepeatController {
 		char choice;
 		// while(choice=='Y') {
 		do {
-			choice = '유';
+			choice = ' ';
 			System.out.print("정수입력 : ");
 			int su = sc.nextInt();
 			System.out.print("정수입력 : ");

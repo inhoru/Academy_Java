@@ -337,7 +337,11 @@ public class ArrayPractice {
 				System.out.print("[" + msgcount + "]");
 				falg = false;
 			}
-		}//
+
+		}
+
+		
+
 	}
 
 }
