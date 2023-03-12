@@ -15,14 +15,16 @@ public class Run {
 		//new OperatorPractice().practice8();
 		//new OperatorPractice().practice9();
 		//new OperatorPractice().practice10();
-		//new OperatorPractice().practice11();
+		new OperatorPractice().practice11();
+		
+		
 		//new ArrayPractice().practice1();
 		//new ArrayPractice().practice2();
 		//new ArrayPractice().practice3();
 		//new ArrayPractice().practice4();
 		//new ArrayPractice().practice5();
 		//new ArrayPractice().practice6();
-		new ArrayPractice().practice7();
+		//new ArrayPractice().practice7();
 	}
 
 }

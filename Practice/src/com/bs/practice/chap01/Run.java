@@ -13,7 +13,8 @@ public class Run {
 		//new ControlPractice().practice6();
 		//new ControlPractice().practice7();
 		//new ControlPractice().practice9();
-		new ControlPractice().practice10();
+		//new ControlPractice().practice10();
+		new ControlPractice().practice11();
 		
 
 	}
