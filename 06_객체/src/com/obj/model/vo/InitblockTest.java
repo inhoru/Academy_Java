@@ -11,6 +11,7 @@ public class InitblockTest {
 	//초기화블록 선언하기
 	{
 		System.out.println("InitblockTest클래스 생성!!");
+		
 		test="야구화이팅!";
 		testnum=200;
 		//조건문,반복문을 사용할 수 있음.

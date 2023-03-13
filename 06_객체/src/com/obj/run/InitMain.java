@@ -6,6 +6,7 @@ public class InitMain {
 
 	public static void main(String[] args) {
 		InitblockTest ibt=new InitblockTest();
+	
 		System.out.println(ibt.test);
 		System.out.println(ibt.testnum);
 		for(int i =0;i<5;i++) {

@@ -32,13 +32,13 @@ public class ConstructorMain {
 		Animal m2 = new Animal("고양이","야옹이",3.0,40,"짬통");
 		Animal m3 = new Animal("거북이","꼬북이",1.2,5,"어항속");
 		
-		System.out.println(m1.kind+" "+m1.name+" "+(int) m1.weight+"kg "+m1.length+"cm "+
+		System.out.println(m1.type+" "+m1.name+" "+(int) m1.weight+"kg "+m1.length+"cm "+
 		m1.home);
 		
-		System.out.println(m2.kind+" "+m2.name+" "+(int) m2.weight+"kg "+m2.length+"cm "+
+		System.out.println(m2.type+" "+m2.name+" "+(int) m2.weight+"kg "+m2.length+"cm "+
 		m2.home);
 
-		System.out.println(m3.kind+" "+m3.name+" "+ m3.weight+"kg "+m3.length+"cm "+
+		System.out.println(m3.type+" "+m3.name+" "+ m3.weight+"kg "+m3.length+"cm "+
 		m3.home);
 
 		

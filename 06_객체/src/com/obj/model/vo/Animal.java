@@ -9,19 +9,20 @@ public class Animal {
 	//거북이 꼬북이 1.2kg 5cm 어항속
 	//객체를 생성할때 모든값이 세팅되어서 생성될 수 있게 하고
 	//해당내용 출력하기
-	public String kind;
+	public String type;
 	public String name;
 	public double weight;
 	public int length ;
 	public String home;
-	public String type;
+	
 	
 	public Animal() {}//기본생성자
 	
-	public Animal(String paramKind,String paramName,
+	public Animal(String paramType,String paramName,
 			double paramWeight,int paramLength,String paramHome) {
+		
 		//만약 이름이같다면 앞에this.를붙여줘야한다.
-		kind=paramKind;
+		type=paramType;
 		name=paramName;
 		weight=paramWeight;
 		length=paramLength;

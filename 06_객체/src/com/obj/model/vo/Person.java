@@ -40,6 +40,7 @@ public class Person {
 	public Person(String name,int age) {
 		this.name=name; //이름이같으면 자기클래스안에서찾음
 		this.age=age; 	//디스를붙여야 매게변수로 가져옴
+		//하늘색이면 필드 (힙)파란색이면 내부에서찾음
 	}
 	public Person(char gender,String address) {
 		// 똑같은 자료형으로 잇으면 오류가뜬다
