@@ -15,6 +15,7 @@ public class Main {
 //		new OperatorController().complexOp();
 //		new OperatorController().calcGrade();
 		//new OperatorController().inputMsg();
-		new OperatorController().thirdOp();
+		//new OperatorController().thirdOp();
+		new OperatorController().bitOperator();
 	}
 }
