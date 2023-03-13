@@ -1,6 +1,7 @@
 package com.obj.model.vo;
 
 public class Employee {
+	//필드선언
 	private int empNo;
 	private String name;
 	private String department;
@@ -31,7 +32,7 @@ public class Employee {
 	}
 
 	public void setName(String name) {
-		// if(name.length()<=2) 조건을 만들수있다.
+		// if(name.length()>=2) 조건을 만들수있다.
 		this.name = name;
 	}
 

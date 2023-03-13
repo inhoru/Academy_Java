@@ -60,6 +60,10 @@ public class MyMethod {
 //		}
 //		return result;
 		//밑에꺼 이해가안가니 설명다시듣고 풀기
+		//리턴을 받는순간 리턴을 받고 바로끝낸다
+		//하지만 맞는값이없으면 리턴을받지않기에
+		//디폴트에 리턴 을넣거나
+		//리턴0을 만들어야한다.
 		switch(op) {
 			case '+' : return su+su2;
 			case '-' : return su-su2;

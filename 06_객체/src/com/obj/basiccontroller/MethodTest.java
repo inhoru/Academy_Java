@@ -6,8 +6,7 @@ public class MethodTest {
 
 	private int count;
 
-	public MethodTest() {
-	}
+	public MethodTest() {}
 	// 메소드는 클래스가 제공하는 기능 의미
 
 	// 1.반환형이 없고 매개변수도 없는 메소드 선언하기
@@ -97,18 +96,18 @@ public class MethodTest {
 	}
 	
 	public void paramArr(int[] intArr) {//매게변수로 배열을 선언할수도있다.
-		for(int i : intArr) {
+		for(int i : intArr) {//매게변수로내오오는배열을출력
 			System.out.println(i);
 		}
 	}
-	public void AparamObj(Animal animal,String type) {
+	public void paramObj(Animal animal,String type) {
 		animal.type=type;
 	}
 	public int chageInt(int num) {
 		//num+=20;
 		return num+20;//원본값을 바꾸기위해서는 리턴을해줘야한다.
 	}
-	public void chageintArr(int[] Arr) {
+	public void chageIntArr(int[] Arr) {
 		Arr[0]=200;
 		
 	}

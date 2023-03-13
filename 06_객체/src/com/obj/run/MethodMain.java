@@ -30,22 +30,22 @@ public class MethodMain {
 //		new MethodTest().numberTest();
 //		new MethodTest().numberTest();
 //		
-		int[] Arr=mt.testReturn();//배열을 반환받자!
-		System.out.println(Arrays.toString(Arr));
+		int[] intArr=mt.testReturn();//배열을 반환받자!
+		System.out.println(Arrays.toString(intArr));
 		Animal a=mt.makeAnimal();	
 		System.out.println(a);
 		System.out.println(a.type+a.name+a.weight);
-		mt.paramArr(Arr);
-		mt.AparamObj(a, "강아지");
+		mt.paramArr(intArr);
+		mt.paramObj(a, "강아지");
 		System.out.println(a.type+a.name+a.weight);
 		
 		//매게변수,반환형으로 배열이나 객체를 선언했을때는 heap영역의
 		//주소를 공유하게됨,-> 원본값을 수정할 수 있게 됨.
 		int su =10;
 		
-		mt.chageInt(su);//리턴값을 넣어주면 원본 변경가능
+		su=mt.chageInt(su);//리턴값을 넣어주면 원본 변경가능
 		int[] numbers= {1,2,3,4,};
-		mt.chageintArr(numbers);
+		mt.chageIntArr(numbers);
 		System.out.println(su);
 		System.out.println(numbers[0]);
 		//main메소드 메개변수 넣기!
