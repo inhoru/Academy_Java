@@ -1,6 +1,6 @@
 package com.obj.model.vo;
 
-public class MaekgeVariable {
+public class Animal {
 	//매개변수있는 생성자 이용하기
 	//동물정보를 저장할 수 있는 클래스 만들기 
 	//종류, 이름,몸무게,길이,서식지
@@ -14,9 +14,13 @@ public class MaekgeVariable {
 	public double weight;
 	public int length ;
 	public String home;
+	public String type;
 	
-	public MaekgeVariable(String paramKind,String paramName,
+	public Animal() {}//기본생성자
+	
+	public Animal(String paramKind,String paramName,
 			double paramWeight,int paramLength,String paramHome) {
+		//만약 이름이같다면 앞에this.를붙여줘야한다.
 		kind=paramKind;
 		name=paramName;
 		weight=paramWeight;

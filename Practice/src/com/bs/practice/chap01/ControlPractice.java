@@ -274,8 +274,9 @@ public class ControlPractice {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("비밀번호 입력(1000~9999) : ");
 		String number = sc.next();
-		int num = Integer.parseInt(number);
-		if ((number.length() > 4 || number.length() <= 3)) {
+		if (!number.matches("[0-9]+")) {
+			System.out.println("정수만 입력해주세요.");
+		}else if ((number.length() > 4 || number.length() <= 3)) {
 			System.out.println("자리수 안맞음");
 		} else if (number.charAt(0) == (number.charAt(1))) {
 			System.out.println("중복값있음");
