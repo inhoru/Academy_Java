@@ -1,12 +1,16 @@
 package com.obj.model.vo;
 
 public class GetterSetter {
+	private static int count;
 	private int empNo;
 	private String name;
 	private String department;
 	private String position;
 	private int salary;
 	private double bonus;
+	{
+		empNo=++count;;
+	}
 	
 	
 

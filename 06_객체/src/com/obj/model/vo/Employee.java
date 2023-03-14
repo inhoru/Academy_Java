@@ -2,11 +2,15 @@ package com.obj.model.vo;
 
 public class Employee {
 	//필드선언
-	private int empNo;
+	private static int count;
+	private  int empNo;
 	private String name;
 	private String department;
 	private int salary;
 	private double bonus;
+	{
+		empNo=++count;//생성자를만들때마다 실행된다.
+	}
 
 	// 생성자
 	public Employee() {
@@ -63,6 +67,8 @@ public class Employee {
 	public double getBonus() {
 		return this.bonus;
 
+	
+		
 	}
 
 }
