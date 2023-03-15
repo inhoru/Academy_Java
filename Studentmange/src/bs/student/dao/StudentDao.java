@@ -4,13 +4,18 @@ import bs.student.dto.Student;
 
 //데이터를 저장해서 관리하는 곳
 public class StudentDao {
-
-	private Student s1;// 클래스도 가능하다.
+	private static StudentDao dao;
+	public static StudentDao getStudentDao() {
+		if(dao==null) dao =new StudentDao();
+		return dao;
+	}
+	private Student s1;						// 클래스도 가능하다.
 	private Student s2;
 	private Student s3;
 	private Student s4;
+	
 
-	public StudentDao() {
+	private StudentDao() {
 	}
 
 	// 학생을 저장소에 저장하는 기능
@@ -53,5 +58,48 @@ public class StudentDao {
 		
 		return totalStudent;
 	}
+	//이름으로 조회
+	public  String searchByName (String name) {
+		String result = "";
+		 if(s1!=null&&s1.getName().equals(name)) {//s1이null이면 뒤에꺼를 확인안한다.
+			 result+=s1.infoStudent()+"\n";
+		 }if(s2!=null&&s2.getName().equals(name)) {
+			 result+=s2.infoStudent()+"\n";
+		 }if(s3!=null&&s3.getName().equals(name)) {
+			 result+=s3.infoStudent()+"\n";
+		 }if(s4!=null&&s4.getName().equals(name)) {
+			 result+=s4.infoStudent()+"\n";
+		 }
+			
+		return result;
+	}
+	//수정하는것
+	public boolean updateStudent (Student s) {
+		if(s1!=null&&s1.getStudentNo().equals(s.getStudentNo())) {
+			s1.setGrade(s.getGrade());
+			s1.setMajor(s.getMajor());
+			s1.setAddress(s.getAddress());
+		}else if(s2!=null&&s2.getStudentNo().equals(s.getStudentNo())) {
+			s2.setGrade(s.getGrade());
+			s2.setMajor(s.getMajor());
+			s2.setAddress(s.getAddress());
+		}else if(s3!=null&&s3.getStudentNo().equals(s.getStudentNo())) {
+			s3.setGrade(s.getGrade());
+			s3.setMajor(s.getMajor());
+			s3.setAddress(s.getAddress());
+		}else if(s4!=null&&s4.getStudentNo().equals(s.getStudentNo())) {
+			s4.setGrade(s.getGrade());
+			s4.setMajor(s.getMajor());
+			s4.setAddress(s.getAddress());
+		}else {
+			return false;
+		}
+		return true;
+		
+
+		
+		
+	}
+
 
 }
