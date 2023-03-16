@@ -23,7 +23,6 @@ public class MyMethoMain {
 //		}
 		
 		boolean flag = mm.checkStr("apple");
-		System.out.println(flag);
 		if(mm.checkStr("apple")) {
 			System.out.println("중복값이 있습니다.");
 		}else {

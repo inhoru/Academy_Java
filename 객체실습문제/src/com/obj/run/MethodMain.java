@@ -6,18 +6,14 @@ public class MethodMain {
 
 	public static void main(String[] args) {
 		Method m = new Method();
-		String msg = m.complexmsg("하나","두개");
-		System.out.println(msg);
+		System.out.println( m.complexmsg("하나","두개"));
 		
-		int num = m.complexNumber(5, 7);
-		System.out.println(num);
+		System.out.println(m.complexNumber(10, 1));
 		
 		
-		boolean ch = m.english('A');
-		System.out.println(ch);
+		System.out.println(m.english('z'));
 		
-		boolean flag= m.comparison();
-		System.out.println(flag);
+		System.out.println(m.comparison());
 		
 	}
 

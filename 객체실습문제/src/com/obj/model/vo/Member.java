@@ -41,6 +41,6 @@ public class Member {
 		return this.mail;
 	}
 	public String infoMember() {
-		return this.id + " "+this.pw+" "+this.name+ " "+this.age+ " "+this.mail;
+		return getId() + " "+getPw()+" "+getName()+ " "+getAge()+ " "+getMail();
 	}
 }
