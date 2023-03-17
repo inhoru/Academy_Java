@@ -90,12 +90,12 @@ public class Student {
 	@Override
 	public boolean equals(Object o) {
 		Student s = (Student) o;
-		if (name.equals(s.getName()) && grade == s.getGrade() && major == s.getMajor()
-				&& address == s.getAddress() && gender == s.getGender()) {
+		if (name.equals(s.getName()) && grade == s.getGrade() && major.equals(s.getMajor()) 
+				&& address.equals(s.getAddress())  && gender == s.getGender()) {
 
-			return false;
+			return true;
 		}
-		return true;
+		return false;
 	}
 
 }
