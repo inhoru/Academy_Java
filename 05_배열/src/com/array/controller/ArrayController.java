@@ -23,7 +23,7 @@ public class ArrayController {
 		// 실수형(float,double) : 0.0
 		// 문자열(String) : null
 		// 문자(char) : ' '
-
+//
 		// int a=0;
 		// 배열생성 후 각 저장공간활용하려면
 		// 인덱스번호로 각 저장공간을 불러올 수 있다.
