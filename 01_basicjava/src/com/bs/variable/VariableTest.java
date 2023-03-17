@@ -31,7 +31,7 @@ public class VariableTest {
 		age=50;
 		System.out.println(age);
 		
-		
+		//
 		//변수에 값을 대입하기 위해서는 반드시 먼저 선언이 되어있어야 한다.
 //		name="유병승";
 //		String name;
