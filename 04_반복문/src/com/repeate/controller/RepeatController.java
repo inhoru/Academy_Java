@@ -27,7 +27,7 @@ public class RepeatController {
 		for (int i = 1; i <= 100; i++) {
 			System.out.println("반갑습니다!");
 		}
-
+//
 		// 1~10까지 수를 출력하기
 		// 1 2 3 4 5 6 7 8 9 10
 		for (int i = 1; i <= 50; i++) {
