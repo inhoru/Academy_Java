@@ -30,7 +30,7 @@ public class InheritController extends Parent {
 		System.out.println(bt2.getNumber());
 		String result = bt2.infoBasicTest();
 //		System.out.println(result);
-//		double test=weight;.
+//		double test=weight;..
 
 		// 매개변수있는 생성자로 생성하기
 		BasicTest bt3 = new BasicTest("생성자", 100, 65.5);
