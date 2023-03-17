@@ -82,6 +82,7 @@ public class LoopPractice {
 	}
 
 	public void practice6() {
+		
 		Scanner sc = new Scanner(System.in);
 //		int su = sc.nextInt();
 //		for (int i = 1; i <= su; i++) {
