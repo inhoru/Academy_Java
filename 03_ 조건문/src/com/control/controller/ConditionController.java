@@ -33,7 +33,7 @@ public class ConditionController {
 		//입력받은 값이 5의 배수인지 확인하는 기능 구현
 		//입력값이 5의 배수면 5의 배수입니다 출력
 		//public void checkNumber()
-		
+		//
 		
 		//if문의 중괄호에서 선언된 변수활용하기 
 		//1. if문 외부에 선언된 변수 활용 -> if문에서 활용이 가능, if 외부에서도 사용가능
