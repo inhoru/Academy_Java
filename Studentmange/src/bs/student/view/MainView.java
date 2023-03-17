@@ -2,6 +2,8 @@ package bs.student.view;
 
 import java.util.Scanner;
 
+import javax.swing.event.ListDataEvent;
+
 import bs.student.controller.StudentController;
 import bs.student.dto.Student;
 
@@ -79,6 +81,12 @@ public class MainView {
 		System.out.println("===== 시스템 메세지=====");
 		System.out.println(msg);
 		System.out.println("====================");
+	}
+	public void printStudent(Student[] infoStudent) {
+		System.out.println("==== 저장된 학생정보 출력====");
+		for(Student s : infoStudent) {
+			System.out.println(s.infoStudent());
+		}
 	}
 
 	public void printStudent(String infoStudent) {
