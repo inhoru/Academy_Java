@@ -53,6 +53,7 @@ public class InterfaceController {
 	}
 	public void animalBark(Motionable m ) {
 		m.brak();
+		
 	}
 
 }
