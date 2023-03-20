@@ -36,7 +36,7 @@ public class PolyController {
 		// 결론은 안된다 자식은 부모꺼를 허락하지않는다.
 		// 반대의경우는 불가능
 		PolyTest pt;
-		// pt=new PolyTestParent();
+		//pt=new PolyTestParent();
 
 		// 부모타입에 저장된 자식클래스는 업캐스팅되어 저장되기 때문에
 		// 자식클래스가 선언한 내용(메소드,변수)을 읽을 수 없다.
@@ -79,13 +79,13 @@ public class PolyController {
 		printPerson(new Student("최주영", 26, 2, "컴공"));
 		printPerson(new Teacher("유병승", 19, "web", 100));
 		// printPerson(new PolyTest());
-		printPerson(new Employee());
+		printPerson(new Employee("김아무",20,"wew","qwe"));
 		
 		PolyTestDao dao=new PolyTestDao(new Teacher());
 		PolyTestDao dao2=new PolyTestDao(new Student());
 		//동등성비교
 		Teacher t = new Teacher("유병승",19,"wep",100);
-		Teacher t2 = new Teacher("유병승",20,"wep",100);
+		Teacher t2 = new Teacher("유병승",19,"wep",100);
 		System.out.println(t.equals(t2));
 		System.out.println(t.equals(dao));
 		
@@ -103,7 +103,10 @@ public class PolyController {
 			System.out.println(
 					p.getName() + " " + p.getAge() + " " + ((Teacher) p).getSubject() + " " + ((Teacher) p).getSalary());
 
-		}
+		}else if (p instanceof Employee) {
+			System.out.println(
+					p.getName() + " " + p.getAge() + " " + ((Employee) p).getDepartment() + " " + ((Employee) p).getJob());
+	}
 	}
 	
 	public Person makePerson(int type) {
@@ -151,7 +154,7 @@ public class PolyController {
 		for(Person p : ageSearch) {
 			if(p!=null) {
 			System.out.println(p.getName()+" "+p.getAge());
-			}
+			} 
 		}
 		
 		//persons에 저장된 student, teacher, employee의 수와 
