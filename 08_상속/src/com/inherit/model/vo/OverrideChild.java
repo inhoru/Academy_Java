@@ -14,5 +14,8 @@ public class OverrideChild extends OverrideParent {
 	public void printMsg() {
 		System.out.println("어노테이션으로 오버라이드");
 	}
+	public final void printMsgg() {
+		System.out.println("어노테이션으로 오버라이드");
+	}
 	
 }
