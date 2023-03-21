@@ -73,6 +73,6 @@ public class Person {
 		Person other = (Person) obj;
 		return Objects.equals(address, other.address) && age == other.age && gedner == other.gedner
 				&& Objects.equals(name, other.name);
-	}
+	}//
 	
 }
