@@ -41,14 +41,21 @@ public class FruitMain {
 				return f.getWeight()>=(double)data;
 			}
 		});
+		//람다표현식
 		result=searchFruit(fruits,3.0,
 				(Fruit f, Object data)-> 
 					f.getWeight()<=(double)data);
 		System.out.println(Arrays.toString(result));
+		
 		result=searchFruit(fruits,"사과",
 				(f, data)->f.getName().equals(data));
 		System.out.println(Arrays.toString(result));
+		
+		result=searchFruit(fruits, 15000,(f, data)->f.getPrice()<=(int)data);
+		System.out.println(Arrays.toString(result));
 	}
+	
+	
 	public static Fruit[] searchFruit(Fruit[] ori, Object data, FilterFruit ff) {
 		Fruit[] searchFruit=new Fruit[ori.length];
 		int index=0;
