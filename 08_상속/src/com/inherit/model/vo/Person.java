@@ -1,4 +1,4 @@
-package com.inherit.model.vo;
+  package com.inherit.model.vo;
 
 public class Person {
 	private String name;

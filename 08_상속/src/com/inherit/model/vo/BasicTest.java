@@ -6,7 +6,6 @@ public class BasicTest extends Parent{
 	//생성자 활용하기
 	public BasicTest() {
 		//super("기본",100.5);
-		super();
 	}
 	
 	public BasicTest(String title,int number,double weight) {

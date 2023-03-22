@@ -118,7 +118,7 @@ public class InheritController extends Parent {
 
 		// clone : 객체복사 메소드
 		// 깊은복사구현
-		// oc.clone();
+		//oc.clone();
 		Student copyStudent = s1.clone();
 		System.out.println(s1);
 		System.out.println(copyStudent);
