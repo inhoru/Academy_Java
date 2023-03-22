@@ -44,6 +44,9 @@ public abstract class Animal {
 	public void setAge(int age) {
 		this.age = age;
 	}
+//	public void bark() {
+//		System.out.println("울음소리!");
+//	}
 	//자식클래스에서 반드시 구현해야할 메소드가 있다면
 	//adstract예약어를 사용해서 처리한다.
 	//1. 메소드의 선언문만 작성함.
