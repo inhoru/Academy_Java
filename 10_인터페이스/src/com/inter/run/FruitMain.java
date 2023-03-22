@@ -31,13 +31,14 @@ public class FruitMain {
 				return f.getColor().equals(data);
 			}
 		});
+		
 		System.out.println(Arrays.toString(result));
 		
 		result=searchFruit(fruits,3.0,new FilterFruit() {
 			
 			@Override
 			public boolean check(Fruit f, Object data) {
-				// TODO Auto-generated method stub
+				
 				return f.getWeight()>=(double)data;
 			}
 		});
