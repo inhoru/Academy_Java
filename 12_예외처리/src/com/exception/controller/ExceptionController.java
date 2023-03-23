@@ -134,7 +134,7 @@ public class ExceptionController {
 			int a = (int) o;
 			a = intArr[11];
 			new FileInputStream("test");
-			// 위치에따라 다른데 이건 수업내용다시들어보자.
+		
 		} catch (ClassCastException e) {
 			System.out.println("형변환에러");
 			// 이렇게 상속관계에잇어서 부모로 예외처리가가능하지만
