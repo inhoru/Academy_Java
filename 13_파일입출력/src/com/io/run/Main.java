@@ -1,14 +1,12 @@
 package com.io.run;
 
-import java.util.Scanner;
-
-import com.io.controller.FileStreamController;
 import com.io.controller.IoController;
+import com.io.controller.SubStreamController;
 
 public class Main {
 
 	public static void main(String[] args) {
-		new IoController().filetest();
+		//new IoController().filetest();
 		//new IoController().fileManage();
 		//new FileStreamController().fileSave();
 		//new FileStreamController().fileOpen();
@@ -21,6 +19,7 @@ public class Main {
 //		String path = sc.nextLine();
 //		new FileStreamController().Save(fileName,path);
 //		new FileStreamController().load(fileName);
+		new SubStreamController().changeStream();
 	}
 
 }
