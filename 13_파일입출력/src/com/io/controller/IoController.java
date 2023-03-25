@@ -185,7 +185,7 @@ public class IoController {
 		}
 		System.out.println("실행용파일 : "+ count);
 		
-//		filesObj = f.listFiles(new java.io.FileFilter() {
+// 		filesObj = f.listFiles(new java.io.FileFilt() {
 //			
 //			@Override
 //			public boolean accept(File pathname) {
