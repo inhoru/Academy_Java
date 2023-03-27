@@ -439,13 +439,15 @@ public class ListController {
 		names2.forEach((o) -> System.out.println(o));
 
 		System.out.println();
+		
+		// 다햇는데실수로삭제함 ㅋ
 
 		List personList = List.of(new person(), new person(), new person(), new person(), new person());
 
 		Scanner sc = new Scanner(System.in);
-
+		int indexs = 0;
 		for (int i = 0; i < personList.size(); i++) {
-
+			System.out.println(i+1+"번째 등록");
 			System.out.print("이름 : ");
 			String names = sc.next();
 			System.out.print("나이 : ");
@@ -455,52 +457,21 @@ public class ListController {
 			System.out.print("키 : ");
 			double height = sc.nextDouble();
 			System.out.print("몸무게 : ");
-			int weight = sc.nextInt();
+			double weight = sc.nextDouble();
 			
-
-			if (personList.get(0)) {
-				((person) personList.get(0)).setNaem(names);
-				((person) personList.get(0)).setAge(age);
-				((person) personList.get(0)).setGender(gender);
-				((person) personList.get(0)).setHeight(height);
-				((person) personList.get(0)).setweight(weight);
-
-			} else if (personList.get(1) == null) {
-				((person) personList.get(1)).setNaem(names);
-				((person) personList.get(1)).setAge(age);
-				((person) personList.get(1)).setGender(gender);
-				((person) personList.get(1)).setHeight(height);
-				((person) personList.get(1)).setweight(weight);
-
-			} else if (personList.get(2) == null) {
-				((person) personList.get(2)).setNaem(names);
-				((person) personList.get(2)).setAge(age);
-				((person) personList.get(2)).setGender(gender);
-				((person) personList.get(2)).setHeight(height);
-				((person) personList.get(2)).setweight(weight);
-
-			} else if (personList.get(3) == null) {
-				((person) personList.get(3)).setNaem(names);
-				((person) personList.get(3)).setAge(age);
-				((person) personList.get(3)).setGender(gender);
-				((person) personList.get(3)).setHeight(height);
-				((person) personList.get(3)).setweight(weight);
-
-			} else if (personList.get(4) == null) {
-
-				((person) personList.get(4)).setNaem(names);
-				((person) personList.get(4)).setAge(age);
-				((person) personList.get(4)).setGender(gender);
-				((person) personList.get(4)).setHeight(height);
-				((person) personList.get(4)).setweight(weight);
-
-			}
+			((person) personList.get(indexs)).setNaem(names);
+			((person) personList.get(indexs)).setAge(age);
+			((person) personList.get(indexs)).setGender(gender);
+			((person) personList.get(indexs)).setHeight(height);
+			((person) personList.get(indexs)).setWeight(weight);
+			
+			indexs++;
 
 		}
-		for(Object o : personList) {
+		for (Object o : personList) {
+
 			System.out.println(o);
-			
-		}	
+		}
 	}
 
 }

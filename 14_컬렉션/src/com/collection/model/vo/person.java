@@ -7,12 +7,12 @@ public class person {
 	private int age;
 	private char gender;
 	private double height;
-	private int weight;
+	private double weight;
 	
 	public person() {
 	}
 
-	public person(String name, int age, char gender, double height, int weight) {
+	public person(String name, int age, char gender, double height, double weight) {
 		this.name = name;
 		this.age = age;
 		this.gender = gender;
@@ -52,11 +52,11 @@ public class person {
 		this.height = height;
 	}
 
-	public int getweight() {
+	public double getWeight() {
 		return weight;
 	}
 
-	public void setweight(int weight) {
+	public void setWeight(double weight) {
 		this.weight = weight;
 	}
 
