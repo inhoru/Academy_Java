@@ -3,14 +3,7 @@ package com.collection.model.vo;
 import java.util.Date;
 import java.util.Objects;
 
-public class Food implements Comparable{
-	@Override
-	public int compareTo(Object o) {
-		Food f = (Food)o;
-		if(this.price >f.price)return +1;
-		else if(this.price<f.price)return -1;
-		else return 0;
-	}
+public class Food {
 	private String name;
 	private int price;
 	private String type;
