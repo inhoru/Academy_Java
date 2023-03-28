@@ -3,12 +3,10 @@ package com.collection.controller;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
-import java.util.List;
-import java.util.Scanner;
+import java.util.LinkedList;
 
 import com.collection.model.vo.Animal;
 import com.collection.model.vo.Food;
-import com.collection.model.vo.Person;
 
 public class ListController {
 
@@ -237,37 +235,61 @@ public class ListController {
 				// contains(Object) : boolean
 				boolean result = animal.contains(new Animal("야옹이",4.2,6,"고양이"));
 				System.out.println(result);
+//				System.out.println();
+//				List personList = List.of(new Person(), new Person(), new Person(), new Person(), new Person());
+//
+//				Scanner sc = new Scanner(System.in);
+//				int indexs = 0;
+//				for (int i = 0; i < personList.size(); i++) {
+//					System.out.println(i+1+"번째 등록");
+//					System.out.print("이름 : ");
+//					String names = sc.next();
+//					System.out.print("나이 : ");
+//					int age = sc.nextInt();
+//					System.out.print("성별 : ");
+//					char gender = sc.next().charAt(0);
+//					System.out.print("키 : ");
+//					double height = sc.nextDouble();
+//					System.out.print("몸무게 : ");
+//					double weight = sc.nextDouble();
+//					
+//					((Person) personList.get(indexs)).setNaem(names);
+//					((Person) personList.get(indexs)).setAge(age);
+//					((Person) personList.get(indexs)).setGender(gender);
+//					((Person) personList.get(indexs)).setHeight(height);
+//					((Person) personList.get(indexs)).setWeight(weight);
+//					
+//					indexs++;
+//
+//				}
+//				for (Object o : personList) {
+//
+//					System.out.println(o);
+//				}
 				
-				List personList = List.of(new Person(), new Person(), new Person(), new Person(), new Person());
-
-				Scanner sc = new Scanner(System.in);
-				int indexs = 0;
-				for (int i = 0; i < personList.size(); i++) {
-					System.out.println(i+1+"번째 등록");
-					System.out.print("이름 : ");
-					String names = sc.next();
-					System.out.print("나이 : ");
-					int age = sc.nextInt();
-					System.out.print("성별 : ");
-					char gender = sc.next().charAt(0);
-					System.out.print("키 : ");
-					double height = sc.nextDouble();
-					System.out.print("몸무게 : ");
-					double weight = sc.nextDouble();
-					
-					((Person) personList.get(indexs)).setNaem(names);
-					((Person) personList.get(indexs)).setAge(age);
-					((Person) personList.get(indexs)).setGender(gender);
-					((Person) personList.get(indexs)).setHeight(height);
-					((Person) personList.get(indexs)).setWeight(weight);
-					
-					indexs++;
-
-				}
-				for (Object o : personList) {
-
-					System.out.println(o);
-				}
+				//LinkedList클래스 이용하기
+				//List인터페이스 구현한 클래스
+				//사용법 ArrayList클래스와 유사함.
+				System.out.println();
+				LinkedList linkList = new LinkedList();
+				//LinkedList에 값을 대입, 출력, 순회 방법은 ArrayList와 동일함.
+				linkList.add("최주영");
+				linkList.add("이동제");
+				linkList.add("최인호");
+				System.out.println(linkList.get(0));
+				linkList.forEach((e)->System.out.println(e));
+				
+				System.out.println();
+				//첫번째가 누구인지
+				System.out.println(linkList.getFirst());
+				//마지막 누구인지
+				System.out.println(linkList.getLast());
+				
+				//기본적으로 데이터를 저장, 출력 : ArrayList사용
+				//저장된 데이터를 조작(수정,삭제)이 많을때 :  LinkedList사용
+				
+				
+				
 	}
-//왜안대지?
+
 }
