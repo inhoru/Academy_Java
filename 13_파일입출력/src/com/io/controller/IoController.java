@@ -18,7 +18,7 @@ public class IoController {
 		// 경로를 입력하지않는다면 사용하고있는 프로젝트 안에 만들어진다.
 		// File f = new File("test.txt");
 		// 절대경로에 입력하면 절대경로에 만들어진다.
-		File f = new File("c:/Users/GDJ/data.txt");
+		File f = new File("c:/Users/GDJ/wowfile.txt");
 
 		// 2. 지정된 파일 생성하기
 		// createNewFile() 메소드를 이용
@@ -185,7 +185,7 @@ public class IoController {
 		}
 		System.out.println("실행용파일 : "+ count);
 		
-// 		filesObj = f.listFiles(new java.io.FileFilt() {
+//		filesObj = f.listFiles(new java.io.FileFilter() {
 //			
 //			@Override
 //			public boolean accept(File pathname) {
@@ -215,6 +215,5 @@ public class IoController {
 		files = f.list((dir,name)->name.contains("exe"));
 	
 	}
-	
 	
 }
