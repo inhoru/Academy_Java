@@ -2,7 +2,7 @@ package com.collection.model.vo;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable{
 	private String name;
 	private int grade;
 	private int classNumber;
@@ -73,6 +73,11 @@ public class Student {
 		Student other = (Student) obj;
 		return classNumber == other.classNumber && gender == other.gender && grade == other.grade
 				&& Objects.equals(name, other.name);
+	}
+	@Override
+	public int compareTo(Object o) {
+		
+		return this.name.compareTo(((Student)o).name);
 	}
 	
 }

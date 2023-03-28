@@ -1,7 +1,12 @@
 package com.collection.controller;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 import com.collection.model.vo.Student;
 
@@ -108,9 +113,66 @@ public class SetController {
 		students.add(new Student("유병승",1,3,'남'));
 		students.add(new Student("유병승",1,3,'남'));
 		System.out.println();
+		
+		//코드가 길어지면(if나 그런게잇으면 출력에 중괄호를 붙여야한다.)
 		students.forEach((e)->{
 			System.out.println(e);
 		});
+		
+		//set과 list의 호환하기
+		System.out.println();
+		List studentList = new ArrayList(students);
+		System.out.println("리스트로 변환 후 출력하기");
+		System.out.println(studentList.get(0));
+		System.out.println(studentList.get(1));
+		
+		System.out.println();
+		List testData = List.of(1,2,3,4,5,6,6,7,7,8,8,10,10);
+		for(Object o : testData) {
+			System.out.print(o+",");
+		}
+		System.out.println();
+		//리스트에잇는값을 중복값제거할려면 이렇게할수가있다.
+		Set temp = new HashSet(testData);
+		testData=new ArrayList(temp);
+		for(Object o : testData) {
+			System.out.print(o+",");
+		}
+		System.out.println();
+		System.out.println("students데이터추가후 출력");
+		testData.addAll(students);
+		testData.forEach((e)->System.out.println(e));
+		
+		//저장순서를 유지하는 set
+		LinkedHashSet liSet = new LinkedHashSet();
+		liSet.add(1);
+		liSet.add(3);
+		liSet.add(2);
+		liSet.add(2);
+		liSet.add(2);
+		liSet.add(8);
+		liSet.add(4);
+		System.out.println();
+		System.out.println("linkedHashSet출력");
+		for(Object i : liSet) {
+			System.out.println(i);
+		}
+		
+		//Tree구조에 객체를 대입할때는 그 클래스에 compareTo()메소드가 재정의 되어 있어야한다.
+		//Comparable인터페이스 구현하기
+		//tree구조에서는 중복값을 기준으로 선언하면안됨.
+		System.out.println();
+		TreeSet studentTree = new TreeSet();
+		studentTree.add(new Student("유병승",1,1,'남'));
+		studentTree.add(new Student("최주영",2,1,'남'));
+		studentTree.add(new Student("김현영",2,2,'여'));
+		studentTree.add(new Student("최하리",1,2,'여'));
+		
+//		for(Object o : studentTree) {
+//			System.out.println(o);
+//		}
+		System.out.println("studentTree 출력");
+		studentTree.forEach((e)-> System.out.println(e));
 	}
 	
 
