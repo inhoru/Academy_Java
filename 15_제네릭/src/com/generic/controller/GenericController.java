@@ -35,7 +35,7 @@ public class GenericController {
 		//밑부분 다시듣기 이게뭔소리임?
 		GenericInterface<String, String> stringFilter = (e,v)->e.equals(v);
 		stringFilter.check("dfds","Dfd");
-		GenericInterface<GenericBasic<String[] ,Date>,String> filter = (e,v)->e.equals(v);
+		GenericInterface<GenericBasic ,String> filter = (e,v)->e.equals(v);
 		filter.check(new GenericBasic<>(),"sada");
 		
 		//ArrayList에 제네릭타입선언 후 이용하기
