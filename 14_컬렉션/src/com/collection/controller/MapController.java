@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javax.swing.text.StyledEditorKit.ForegroundAction;
+
 import com.collection.model.vo.Fruit;
 import com.collection.model.vo.Student;
 
@@ -105,14 +107,18 @@ public class MapController {
 
 		// key와 value를 동시에 반환해주는 메소드는 제공
 		// entrySet()메소드 Map.Entry내부클래스를 이용
-		System.out.println();
-		Set entry = map.entrySet();
-		Iterator it2 = entry.iterator();
-		while (it2.hasNext()) {
-			Map.Entry all = (Map.Entry) it2.next();
-			System.out.println(all.getKey());
-			System.out.println(all.getValue());
+		System.out.println("entryset");
+		for (Object i : map.entrySet()) {
+			Map.Entry  is = (Map.Entry) i; 
+			System.out.println(is.getKey()+" "+is.getValue());
+			
 		}
+//		Iterator it2 = entry.iterator();
+//		while (it2.hasNext()) {
+//			Map.Entry all = (Map.Entry) it2.next();
+//			System.out.println(all.getKey());
+//			System.out.println(all.getValue());
+//		}
 
 		// 과일을 저장하는 클래스를 생성
 		// 이름, 원산지, 수량, 가격
@@ -196,6 +202,7 @@ public class MapController {
 //		data1.put("name", "경기도 시흥시");
 //		System.out.println(data1);
 		System.out.println();
+		
 		List dataList = new ArrayList();
 		dataList.add(Map.of("name","유병승","age",19));
 		dataList.add(Map.of("name","정상준","age",26));
