@@ -14,9 +14,10 @@ public class Test {
 		mp.put("3", new Fruit("포도", "영동", 10, 35000));
 		mp.put("4", new Fruit("배", "나주", 10, 50000));
 		
-		for (Object i : mp.entrySet()) {
-			Map.Entry  is = (Map.Entry) i; 
-			System.out.println(is.getKey()+" "+is.getValue());
+		Set <Map.Entry> entry = mp.entrySet();
+		
+		for (Map.Entry<String, Fruit> i : entry) {
+			System.out.println(i.getKey()+" "+i.getValue());
 			
 		}
 		
