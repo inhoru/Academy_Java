@@ -56,7 +56,7 @@ public class Test {
 		list.forEach((e) -> System.out.println(e));
 
 		// 사원을 키(오름차순)순으로 정렬하기
-		System.out.println();
+		System.out.println("오름차순");
 		list.sort((e, e1) -> (int) (e.getHeight() - e1.getHeight()));
 		list.forEach((e) -> System.out.println(e));
 
