@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.jdbc.member.model.dao.MemberDao;
 import com.jdbc.member.model.dto.MemberDTO;
+import com.jdbc.model.vo.Member;
 import com.jdbc.view.MainView;
 
 public class MemberController {
@@ -42,5 +43,26 @@ public class MemberController {
 		
 		new MainView().printMembers(members);
 	}
+	
+	public void insertMember() {
+		MemberDTO member = new MainView().addMember();
+		
+		int result = dao.insertMember(member);
+		
+		new MainView().printMsg(result>0?"회원등록성공":"회원등록실패");
+	}
+	public void updateMember() {
+		int result = dao.updateMember(new MainView().updateData());
+		new MainView().printMsg(result>0?"회원수정 성공":"회원수정 실패");
+	}
+	public void removeData() {
+		String inputId =new MainView().removeData();
+		
+		int m = dao.removeData(inputId);
+		
+		new MainView().printMsg(m>0?"회원삭제 성공":"회원삭제 실패");
+	
+	}
+		
 	
 }

@@ -1,74 +1,39 @@
 package com.jdbc.member.model.dto;
 
-import java.io.Serializable;
 import java.sql.Date;
 import java.util.Arrays;
 import java.util.Objects;
 
-public class MemberDTO implements Serializable{
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 3712068441092746837L;
+public class MemberDTO {
+	
 	private String memberId;
-	private String memberPw;
+	private String memberPwd;
 	private String memberName;
 	private char gender;
 	private int age;
 	private String email;
 	private String phone;
 	private String address;
-	private String [] hobby;
+	private String[] hobby;
 	private Date enrollDate;
 	
 	public MemberDTO() {
-	
+		// TODO Auto-generated constructor stub
 	}
 
-	public MemberDTO(String memberId, String memberPw, String memberName, char gender, int age, String email,
-			String phone, String address) {
+	public MemberDTO(String memberId, String memberPwd, String memberName, char gender, int age, String email,
+			String phone, String address, String[] hobby, Date enrollDate) {
 		super();
 		this.memberId = memberId;
-		this.memberPw = memberPw;
+		this.memberPwd = memberPwd;
 		this.memberName = memberName;
 		this.gender = gender;
 		this.age = age;
 		this.email = email;
 		this.phone = phone;
 		this.address = address;
-	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + Arrays.hashCode(hobby);
-		result = prime * result
-				+ Objects.hash(address, age, email, enrollDate, gender, memberId, memberName, memberPw, phone);
-		return result;
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		MemberDTO other = (MemberDTO) obj;
-		return Objects.equals(address, other.address) && age == other.age && Objects.equals(email, other.email)
-				&& Objects.equals(enrollDate, other.enrollDate) && gender == other.gender
-				&& Arrays.equals(hobby, other.hobby) && Objects.equals(memberId, other.memberId)
-				&& Objects.equals(memberName, other.memberName) && Objects.equals(memberPw, other.memberPw)
-				&& Objects.equals(phone, other.phone);
-	}
-
-	@Override
-	public String toString() {
-		return "MemberDTO [memberId=" + memberId + ", memberPw=" + memberPw + ", memberName=" + memberName + ", gender="
-				+ gender + ", age=" + age + ", email=" + email + ", phone=" + phone + ", address=" + address
-				+ ", hobby=" + Arrays.toString(hobby) + ", enrollDate=" + enrollDate + "]";
+		this.hobby = hobby;
+		this.enrollDate = enrollDate;
 	}
 
 	public String getMemberId() {
@@ -79,12 +44,12 @@ public class MemberDTO implements Serializable{
 		this.memberId = memberId;
 	}
 
-	public String getMemberPw() {
-		return memberPw;
+	public String getMemberPwd() {
+		return memberPwd;
 	}
 
-	public void setMemberPw(String memberPw) {
-		this.memberPw = memberPw;
+	public void setMemberPwd(String memberPwd) {
+		this.memberPwd = memberPwd;
 	}
 
 	public String getMemberName() {
@@ -151,8 +116,40 @@ public class MemberDTO implements Serializable{
 		this.enrollDate = enrollDate;
 	}
 
-	public static long getSerialversionuid() {
-		return serialVersionUID;
+	@Override
+	public String toString() {
+		return "MemberDTO [memberId=" + memberId + ", memberPwd=" + memberPwd + ", memberName=" + memberName
+				+ ", gender=" + gender + ", age=" + age + ", email=" + email + ", phone=" + phone + ", address="
+				+ address + ", hobby=" + Arrays.toString(hobby) + ", enrollDate=" + enrollDate + "]";
 	}
 
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + Arrays.hashCode(hobby);
+		result = prime * result
+				+ Objects.hash(address, age, email, enrollDate, gender, memberId, memberName, memberPwd, phone);
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		MemberDTO other = (MemberDTO) obj;
+		return Objects.equals(address, other.address) && age == other.age && Objects.equals(email, other.email)
+				&& Objects.equals(enrollDate, other.enrollDate) && gender == other.gender
+				&& Arrays.equals(hobby, other.hobby) && Objects.equals(memberId, other.memberId)
+				&& Objects.equals(memberName, other.memberName) && Objects.equals(memberPwd, other.memberPwd)
+				&& Objects.equals(phone, other.phone);
+	}
+	
+	
+	
+	
 }
