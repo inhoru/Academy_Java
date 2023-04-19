@@ -31,13 +31,16 @@ public class BoardDao {
 	public List<BoardDTO> selectAllBoard(Connection conn) {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = this.sql.getProperty("selectAllBoard");
 		List<BoardDTO> boards = new ArrayList();
+		String sql = this.sql.getProperty("selectAllBoard");
 		try {
 			pstmt = conn.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			while (rs.next())
-				boards.add(getBoard(rs));
+			while(rs.next()) {
+				BoardDTO b = getBoard(rs);
+				b.setComments(selectBoardComment(conn, b.getBoardNo()));
+				boards.add(b);
+			}
 
 		} catch (SQLException e) {
 			e.printStackTrace();

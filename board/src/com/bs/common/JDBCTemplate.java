@@ -17,10 +17,9 @@ public class JDBCTemplate {
 		//driver.properties를 불러올려면 절대경로로 불러와야한다 위치는 bin에있다.
 		//클래스에잇는 위치를 가져올려고 getResource를 사용 (JDBCTemplate이 있는 최상위폴더는 bin폴더에있다.)
 		String path = JDBCTemplate.class.getResource("/driver.properties").getPath();
-		System.out.println(path);
-		try {
-			Properties driver = new Properties();
-			driver.load(new FileReader(path));
+		Properties driver = new Properties();
+		try (FileReader fr = new FileReader(path)){
+			driver.load(fr);
 			Class.forName(driver.getProperty("drivername"));
 			conn = DriverManager.getConnection(driver.getProperty("url"),driver.getProperty("user"),driver.getProperty("pw"));
 			conn.setAutoCommit(false);
