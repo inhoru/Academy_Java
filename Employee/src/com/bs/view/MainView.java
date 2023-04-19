@@ -30,7 +30,8 @@ public class MainView {
 			case 4 :
 			case 5 :
 			case 6 :
-			case 7 :System.out.println("프로그램을 종료합니다.");return;
+			case 7 :
+			case 8 :System.out.println("프로그램을 종료합니다.");return;
 				default : 
 					System.out.println("잘못입력하셧습니다 다시입력해주세요.");
 				
