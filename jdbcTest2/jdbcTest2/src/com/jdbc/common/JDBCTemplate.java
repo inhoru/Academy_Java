@@ -13,13 +13,12 @@ public class JDBCTemplate {
 	//Connection객체를 생성해주는 기능을 제공
 	public static Connection getConnection() {
 		Connection conn=null;
+		Properties driver=new Properties();
 		//절대경로가 필요함.
 		String path=JDBCTemplate.class.getResource("/driver.properties").getPath();
 		System.out.println(path);
-		try {
-			Properties driver=new Properties();
-			driver.load(new FileReader(path));
-			
+		try (FileReader fr=new FileReader(path);){
+			driver.load(fr);
 			Class.forName(driver.getProperty("drivername"));
 			conn=DriverManager.getConnection(driver.getProperty("url")
 					,driver.getProperty("user")
