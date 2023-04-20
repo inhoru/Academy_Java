@@ -46,6 +46,36 @@ public class EmployeeDao {
 		}
 		return employees;
 	}
+	public List<Employee> searchEmployee(Connection conn, Map param){
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<Employee> employee = new ArrayList<>();
+		String sql = this.sql.getProperty("
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	public Employee getEmployee(ResultSet rs) throws SQLException{
 		Employee e = new Employee();
 		e.setEmpId(rs.getString("emp_id"));

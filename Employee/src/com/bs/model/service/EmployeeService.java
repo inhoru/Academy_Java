@@ -5,6 +5,7 @@ import static com.bs.common.JDBCTemplate.getConnection;
 
 import java.sql.Connection;
 import java.util.List;
+import java.util.Map;
 
 import com.bs.model.dao.EmployeeDao;
 import com.bs.model.dto.Employee;
@@ -19,5 +20,12 @@ public class EmployeeService {
 		List<Employee> employees= dao.selectAllEmployee(conn);
 		close(conn);
 		return employees;
+	}
+	public List<Employee> searchEmployee(Map param){
+		Connection conn = getConnection();
+		List<Employee> employee = dao.searchEmployee(conn,param);
+		close(conn);
+		return employee;
+		
 	}
 }

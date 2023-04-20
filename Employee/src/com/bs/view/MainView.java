@@ -1,6 +1,7 @@
 package com.bs.view;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 import com.bs.controller.EmployeeController;
@@ -25,8 +26,8 @@ public class MainView {
 			int cho = sc.nextInt();
 			switch(cho) {
 			case 1 : controller.selectAllEmployee();break;
-			case 2 :
-			case 3 :
+			case 2 : controller.selectSearchEmployee();break;
+			case 3 : 
 			case 4 :
 			case 5 :
 			case 6 :
@@ -44,6 +45,23 @@ public class MainView {
 		System.out.println("==== 조회된 결과 ====");
 		employee.forEach(e->System.out.println(e));
 		System.out.println("=================");
+	}
+	
+	public Map inputSearch() {
+		System.out.println("==== 사원 항목별검색 ====");
+		System.out.println("항목 1.부서 2.직책 3.이름 4.급여(크고작고)");
+		int cho = sc.nextInt();
+		String col = "";
+		switch(cho) {
+		case 1 : col = "dept_title";break;
+		case 2 : col = "job_name";break;
+		case 3 : col = "emp_name";break;
+		case 4 : col = "salary";break;
+	
+		}
+		System.out.println("검색어 : ");
+		String keyword = sc.nextLine();
+		return Map.of("col",col,"keyword",keyword);
 	}
 
 }

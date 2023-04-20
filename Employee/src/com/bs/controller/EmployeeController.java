@@ -1,6 +1,7 @@
 package com.bs.controller;
 
 import java.util.List;
+import java.util.Map;
 
 import com.bs.model.dto.Employee;
 import com.bs.model.service.EmployeeService;
@@ -16,5 +17,10 @@ public class EmployeeController {
 	public void selectAllEmployee() {
 		List<Employee> employees=service.selectAllEmployee();
 		view.printMembers(employees);
+	}
+	public void selectSearchEmployee() {
+		Map param = view.inputSearch();
+		List<Employee> employee = service.searchEmployee(param);
+		view.printMembers(employee);
 	}
 }
