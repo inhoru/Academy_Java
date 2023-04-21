@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Properties;
 
 import com.bs.model.dto.Employee;
@@ -49,8 +50,25 @@ public class EmployeeDao {
 	public List<Employee> searchEmployee(Connection conn, Map param){
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		List<Employee> employee = new ArrayList<>();
-		String sql = this.sql.getProperty("
+		List<Employee> employees = new ArrayList<>();
+		String sql = this.sql.getProperty("selectSearchEmployee");
+		sql = sql.replace("#COL", (String)param.get("col"));
+		
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, (String)param.get("keyword"));
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				employees.add(getEmployee(rs));
+			}
+			
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(rs);
+			close(pstmt);
+		}
+		return employees;
 	}
 	
 	

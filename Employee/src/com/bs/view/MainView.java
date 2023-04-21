@@ -56,10 +56,21 @@ public class MainView {
 		case 1 : col = "dept_title";break;
 		case 2 : col = "job_name";break;
 		case 3 : col = "emp_name";break;
-		case 4 : col = "salary";break;
-	
+		case 4 : col = "salary";
+		System.out.print("1. 입력한 급여보다 작은 사원조회");
+		System.out.print("2. 입력한 급여보다 큰 사원조회");
+		int ch = sc.nextInt();
+		switch(ch) {
+		case 1 :
+		case 2 :
 		}
-		System.out.println("검색어 : ");
+		System.out.print("검색어 : ");
+		sc.nextLine();
+		String keyword = sc.nextLine();
+		return Map.of("col",col,"keyword",keyword);
+		}
+		System.out.print("검색어 : ");
+		sc.nextLine();
 		String keyword = sc.nextLine();
 		return Map.of("col",col,"keyword",keyword);
 	}
