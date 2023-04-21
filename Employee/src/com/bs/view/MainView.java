@@ -24,55 +24,78 @@ public class MainView {
 			System.out.println("8. 프로그램종료");
 			System.out.print("메뉴 입력 : ");
 			int cho = sc.nextInt();
-			switch(cho) {
-			case 1 : controller.selectAllEmployee();break;
-			case 2 : controller.selectSearchEmployee();break;
-			case 3 : 
-			case 4 :
-			case 5 :
-			case 6 :
-			case 7 :
-			case 8 :System.out.println("프로그램을 종료합니다.");return;
-				default : 
-					System.out.println("잘못입력하셧습니다 다시입력해주세요.");
-				
+			switch (cho) {
+			case 1:
+				controller.selectAllEmployee();
+				break;
+			case 2:
+				controller.selectSearchEmployee();
+				break;
+			case 3:
+			case 4:
+			case 5:
+			case 6:
+			case 7:
+			case 8:
+				System.out.println("프로그램을 종료합니다.");
+				return;
+			default:
+				System.out.println("잘못입력하셧습니다 다시입력해주세요.");
+
 			}
-			
+
 		}
 
 	}
+
 	public void printMembers(List<Employee> employee) {
 		System.out.println("==== 조회된 결과 ====");
-		employee.forEach(e->System.out.println(e));
+		employee.forEach(e -> System.out.println(e));
 		System.out.println("=================");
 	}
-	
+
 	public Map inputSearch() {
 		System.out.println("==== 사원 항목별검색 ====");
 		System.out.println("항목 1.부서 2.직책 3.이름 4.급여(크고작고)");
+		System.out.print("입력 : ");
 		int cho = sc.nextInt();
 		String col = "";
-		switch(cho) {
-		case 1 : col = "dept_title";break;
-		case 2 : col = "job_name";break;
-		case 3 : col = "emp_name";break;
-		case 4 : col = "salary";
-		System.out.print("1. 입력한 급여보다 작은 사원조회");
-		System.out.print("2. 입력한 급여보다 큰 사원조회");
-		int ch = sc.nextInt();
-		switch(ch) {
-		case 1 :
-		case 2 :
+		int ch = 0;
+		switch (cho) {
+		case 1:
+			col = "dept_title";
+			break;
+		case 2:
+			col = "job_name";
+			break;
+		case 3:
+			col = "emp_name";
+			break;
+		case 4:
+			col = "salary";
+			System.out.println("1. 입력한 급여보다 작은 사원조회");
+			System.out.println("2. 입력한 급여보다 큰 사원조회");
+			System.out.print("입력 : ");
+			ch = sc.nextInt();
+			if(ch==1){
+				sc.nextLine();
+				System.out.print("월급 입력 : ");
+				int keyword = sc.nextInt();
+				return Map.of("col", col, "keyword", keyword,"ch",ch);
+			}else if(ch==2){
+				sc.nextLine();
+				System.out.print("월급 입력 : ");
+				int keyword = sc.nextInt();
+				return Map.of("col", col, "keyword", keyword,"ch",ch);
+			
+			}
+			
+			
 		}
 		System.out.print("검색어 : ");
 		sc.nextLine();
 		String keyword = sc.nextLine();
-		return Map.of("col",col,"keyword",keyword);
-		}
-		System.out.print("검색어 : ");
-		sc.nextLine();
-		String keyword = sc.nextLine();
-		return Map.of("col",col,"keyword",keyword);
+		return Map.of("col", col, "keyword", keyword,"ch",ch);
 	}
 
 }

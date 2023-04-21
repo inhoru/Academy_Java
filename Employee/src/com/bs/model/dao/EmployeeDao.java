@@ -54,9 +54,24 @@ public class EmployeeDao {
 		String sql = this.sql.getProperty("selectSearchEmployee");
 		sql = sql.replace("#COL", (String)param.get("col"));
 		
+		String sqlsalaryhigt = this.sql.getProperty("selectSalaryHigt");
+		sqlsalaryhigt = sqlsalaryhigt.replace("#COL", (String)param.get("col"));
+		
+		String sqlsalarylow = this.sql.getProperty("selectSalaryLow");
+		sqlsalarylow = sqlsalarylow.replace("#COL", (String)param.get("col"));
+		
 		try {
-			pstmt=conn.prepareStatement(sql);
-			pstmt.setString(1, (String)param.get("keyword"));
+					int su = (int) param.get("ch");
+			if(su == 2) {				
+				pstmt = conn.prepareStatement(sqlsalaryhigt);
+				pstmt.setInt(1, (int) param.get("keyword"));
+			}else if(su==1) {
+				pstmt = conn.prepareStatement(sqlsalarylow);
+				pstmt.setInt(1, (int) param.get("keyword"));				
+			}else if(su==0){
+				pstmt=conn.prepareStatement(sql);
+				pstmt.setString(1, (String)param.get("keyword"));
+			}
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				employees.add(getEmployee(rs));
