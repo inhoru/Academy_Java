@@ -51,6 +51,7 @@ public class EmployeeDao {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<Employee> employees = new ArrayList<>();
+		
 		String sql = this.sql.getProperty("selectSearchEmployee");
 		sql = sql.replace("#COL", (String)param.get("col"));
 		

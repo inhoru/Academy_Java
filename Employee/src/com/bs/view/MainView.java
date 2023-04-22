@@ -15,7 +15,7 @@ public class MainView {
 		while (true) {
 			System.out.println("==== 전체사원 조회 ====");
 			System.out.println("1. 전체 사원조회");
-			System.out.println("2. 사원조회(1.부서 2. 직책 3. 이름 4. 급여(크고작고)");
+			System.out.println("2. 사원조회(1.부서 2. 직책 3. 이름 4. 급여(크고작고))");
 			System.out.println("3. 사원등록");
 			System.out.println("4. 사원수정(직책, 부서, 급여, 전화번호, 이메일");
 			System.out.println("5. 사원삭제");
@@ -32,6 +32,8 @@ public class MainView {
 				controller.selectSearchEmployee();
 				break;
 			case 3:
+				controller.insertEmployee();
+				break;
 			case 4:
 			case 5:
 			case 6:
@@ -96,6 +98,16 @@ public class MainView {
 		sc.nextLine();
 		String keyword = sc.nextLine();
 		return Map.of("col", col, "keyword", keyword,"ch",ch);
+	}
+	public Employee addEmployee() {
+		Employee e = new Employee();
+		System.out.println("==== 회원등록 ====");
+		System.out.print("이름 : ");
+		sc.nextLine();
+		String empName = sc.nextLine();
+		System.out.println("주민번호(-)포함 : ");
+		String empNo = sc.nextLine();
+		
 	}
 
 }
