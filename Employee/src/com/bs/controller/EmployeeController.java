@@ -23,4 +23,15 @@ public class EmployeeController {
 		List<Employee> employee = service.searchEmployee(param);
 		view.printMembers(employee);
 	}
+	public void insertEmployee() {
+		Employee e = view.addEmployee();
+		int result = service.insertEmployee(e);
+		view.printMsg(result>0?"등록성공":"등록실패");
+	}
+	public void updateData() {
+		Employee e = view.updateDate();
+		int result = service.updateDate(e);
+		view.printMsg(result>0?"수정성공":"수정실패");
+		
+	}
 }

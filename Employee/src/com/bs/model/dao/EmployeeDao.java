@@ -86,6 +86,34 @@ public class EmployeeDao {
 		}
 		return employees;
 	}
+	public int insertEmployee(Connection conn , Employee e) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String sequence =  this.sql.getProperty("sequence");
+		String sql = this.sql.getProperty("insertEmployee");
+		try {
+			pstmt = conn.prepareStatement(sequence);
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, e.getEmpName());
+			pstmt.setString(2, e.getEmpNo());
+			pstmt.setString(3, e.getEmail());
+			pstmt.setString(4, e.getPhone());
+			pstmt.setString(5, e.getDeptCode());
+			pstmt.setString(6, e.getJobCode());
+			pstmt.setInt(7, e.getSalary());
+			pstmt.setInt(8, e.getSalary());
+			pstmt.setDouble(9, e.getBonus());
+			pstmt.setString(10, e.getManagerId());
+			
+			result = pstmt.executeUpdate();
+			
+		}catch(SQLException s){
+			s.printStackTrace();
+		}finally {
+			close(pstmt);
+			
+		}return result;
+	}
 	
 	
 	

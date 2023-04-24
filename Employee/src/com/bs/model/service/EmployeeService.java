@@ -1,7 +1,8 @@
 package com.bs.model.service;
 
-import static com.bs.common.JDBCTemplate.close;
-import static com.bs.common.JDBCTemplate.getConnection;
+import static com.bs.common.JDBCTemplate.*;
+
+
 
 import java.sql.Connection;
 import java.util.List;
@@ -26,6 +27,23 @@ public class EmployeeService {
 		List<Employee> employee = dao.searchEmployee(conn,param);
 		close(conn);
 		return employee;
+		
+	}
+	public int insertEmployee(Employee e){
+		Connection conn = getConnection();
+		int result = dao.insertEmployee(conn, e);
+		
+		if(result>0) {
+			commit(conn);
+		}else {
+			rollback(conn);
+		}
+		close(conn);
+		return result; 
+		
+	}
+	public int updateData() {
+		Connection conn = 
 		
 	}
 }
