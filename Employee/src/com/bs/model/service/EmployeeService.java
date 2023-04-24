@@ -14,7 +14,7 @@ import com.bs.model.dto.Employee;
 public class EmployeeService {
 	
 	private EmployeeDao dao = new EmployeeDao();
-	private EmployeeService service = new EmployeeService();
+	
 	
 	public List<Employee> selectAllEmployee(){
 		Connection conn =getConnection();

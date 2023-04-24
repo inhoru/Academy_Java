@@ -40,7 +40,6 @@ public class EmployeeController {
 		view.printMsg(m>0?"회원삭제 성공":"회원삭제 실패");
 	}
 	public void deptManagement() {
-		
 		Map param = view.deptManagement();
 		int result = service.deptManagement(param);
 		view.printMsg(result>0?"성공":"실패");
