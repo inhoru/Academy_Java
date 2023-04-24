@@ -11,6 +11,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
+import javax.sql.RowSetInternal;
+
 import com.bs.model.dto.Employee;
 import static com.bs.common.JDBCTemplate.close;
 
@@ -89,10 +91,9 @@ public class EmployeeDao {
 	public int insertEmployee(Connection conn , Employee e) {
 		PreparedStatement pstmt = null;
 		int result = 0;
-		String sequence =  this.sql.getProperty("sequence");
 		String sql = this.sql.getProperty("insertEmployee");
 		try {
-			pstmt = conn.prepareStatement(sequence);
+
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, e.getEmpName());
 			pstmt.setString(2, e.getEmpNo());
@@ -114,6 +115,66 @@ public class EmployeeDao {
 			
 		}return result;
 	}
+	public int updateEmployee(Connection conn, Employee e) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String sql = this.sql.getProperty("updateEmployee");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, e.getDeptCode());
+			pstmt.setString(2, e.getJobCode());
+			pstmt.setInt(3, e.getSalary());
+			pstmt.setString(4, e.getPhone());
+			pstmt.setString(5, e.getEmail());
+			pstmt.setInt(6, e.getEmpId());
+			result = pstmt.executeUpdate();
+		}catch(SQLException d) {
+			d.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return	result;
+	}
+	public int removeEmployee(Connection conn, int m) {
+		PreparedStatement pstmt= null;
+		int result = 0;
+		String sql = this.sql.getProperty("removeEmployee");
+		try {
+			pstmt= conn.prepareStatement(sql);
+			pstmt.setInt(1, m);
+			result = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int deptManagement(Connection conn, Map param) {
+		PreparedStatement pstmt=null;
+		int result = 0;
+		
+		String deptManagement = this.sql.getProperty("deptManagement");
+		String sqlDelete = this.sql.getProperty("deptDelete");
+		try {
+			int su = (int)param.get("su");
+			if(su==1||su==2) {
+				pstmt = conn.prepareStatement(deptManagement);
+				pstmt.setString(1, (String) param.get("dept"));
+				pstmt.setInt(2, (int) param.get("id"));
+			}else if(su==3) {
+				pstmt = conn.prepareStatement(sqlDelete);
+				pstmt.setInt(1, (int) param.get("id"));
+			}
+			result = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	
 	
 	
 	
@@ -140,7 +201,7 @@ public class EmployeeDao {
 	
 	public Employee getEmployee(ResultSet rs) throws SQLException{
 		Employee e = new Employee();
-		e.setEmpId(rs.getString("emp_id"));
+		e.setEmpId(rs.getInt("emp_id"));
 		e.setEmpName(rs.getString("emp_name"));
 		e.setEmpNo(rs.getString("emp_no"));
 		e.setEmail(rs.getString("email"));

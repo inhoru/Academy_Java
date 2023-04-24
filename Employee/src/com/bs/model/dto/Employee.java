@@ -6,7 +6,7 @@ import java.util.Objects;
 import com.bs.model.dao.EmployeeDao;
 
 public class Employee {
-	private String empId;
+	private int empId;
 	private String empName;
 	private String empNo;
 	private String email;
@@ -25,7 +25,7 @@ public class Employee {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Employee(String empId, String empName, String empNo, String email, String phone, String deptCode,
+	public Employee(int empId, String empName, String empNo, String email, String phone, String deptCode,
 			String jobCode, int salary, String salLevel, double bonus, String managerId, Date hireDate, Date entDate,
 			char entYn) {
 		super();
@@ -45,11 +45,11 @@ public class Employee {
 		this.entYn = entYn;
 	}
 
-	public String getEmpId() {
+	public int getEmpId() {
 		return empId;
 	}
 
-	public void setEmpId(String empId) {
+	public void setEmpId(int empId) {
 		this.empId = empId;
 	}
 

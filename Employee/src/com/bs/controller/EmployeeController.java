@@ -17,6 +17,7 @@ public class EmployeeController {
 	public void selectAllEmployee() {
 		List<Employee> employees=service.selectAllEmployee();
 		view.printMembers(employees);
+		view.deptManagement();
 	}
 	public void selectSearchEmployee() {
 		Map param = view.inputSearch();
@@ -28,10 +29,21 @@ public class EmployeeController {
 		int result = service.insertEmployee(e);
 		view.printMsg(result>0?"등록성공":"등록실패");
 	}
-	public void updateData() {
-		Employee e = view.updateDate();
-		int result = service.updateDate(e);
+	public void updateEmployee() {
+		Employee e = view.updateEmployee();
+		int result = service.updateEmployee(e);
 		view.printMsg(result>0?"수정성공":"수정실패");
 		
+	}
+	public void removeEmployee() {
+		int inputId = view.removeEmployee();
+		int m = service.removeEmployee(inputId);
+		view.printMsg(m>0?"회원삭제 성공":"회원삭제 실패");
+	}
+	public void deptManagement() {
+		
+		Map param = view.deptManagement();
+		int result = service.deptManagement(param);
+		view.printMsg(result>0?"성공":"실패");
 	}
 }
