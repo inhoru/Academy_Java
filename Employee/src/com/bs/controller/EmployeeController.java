@@ -17,7 +17,6 @@ public class EmployeeController {
 	public void selectAllEmployee() {
 		List<Employee> employees=service.selectAllEmployee();
 		view.printMembers(employees);
-		view.deptManagement();
 	}
 	public void selectSearchEmployee() {
 		Map param = view.inputSearch();
