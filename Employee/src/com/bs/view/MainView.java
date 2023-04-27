@@ -234,6 +234,7 @@ public class MainView {
 		return sc.nextInt();
 	}
 
+	//dept 테이블 컬럼관리
 	public Map deptManagement() {
 		System.out.println("==== 부서 등록 및 삭제 ====");
 		System.out.println("1. 부서등록");
