@@ -1,15 +1,13 @@
 package com.bs.view;
 
-import static com.bs.common.JDBCTemplate.getConnection;
-
-import java.sql.Connection;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
 import com.bs.controller.EmployeeController;
+import com.bs.model.dto.Department;
 import com.bs.model.dto.Employee;
-import com.bs.model.service.EmployeeService;
+import com.bs.model.dto.Job;
 
 public class MainView {
 	private Scanner sc = new Scanner(System.in);
@@ -45,9 +43,11 @@ public class MainView {
 				controller.removeEmployee();
 				break;
 			case 6:
-				controller.deptManagement();
+				deptManagement();
 				break;
 			case 7:
+				jobManagement();
+				break;
 			case 8:
 				System.out.println("프로그램을 종료합니다.");
 				return;
@@ -234,40 +234,115 @@ public class MainView {
 		return sc.nextInt();
 	}
 
-	//dept 테이블 컬럼관리
-	public Map deptManagement() {
+	// dept 테이블 컬럼관리
+	public int deptManagement() {
+		EmployeeController controller = new EmployeeController();
 		System.out.println("==== 부서 등록 및 삭제 ====");
 		System.out.println("1. 부서등록");
 		System.out.println("2. 부서수정");
 		System.out.println("3. 부서삭제");
 		System.out.print("입력 : ");
 		int su = sc.nextInt();
-		int id = 0;
-		String dept = "";
 		switch (su) {
 		case 1:
-			System.out.print("등록할 사원번호 : ");
-			id = sc.nextInt();
-
-			System.out.print("등록할 부서 : ");
-			sc.nextLine();
-			dept = sc.nextLine();
+			controller.departmentInsert();
 			break;
-
 		case 2:
-			System.out.print("수정할 사원번호 : ");
-			id = sc.nextInt();
-
-			System.out.print("새 부서 : ");
-			sc.nextLine();
-			dept = sc.nextLine();
+			controller.departmentUpdate();
 			break;
 		case 3:
-			System.out.print("삭제 할 사원번호 : ");
-			id = sc.nextInt();
+			controller.departmentRemove();
 			break;
+		default:
+			System.out.println("잘못입력하셧습니다 다시입력해주세요.");
 		}
-		return Map.of("su", su, "id", id, "dept", dept);
+		return su;
+
+	}
+
+	public Department departmentInsert() {
+		Department d = new Department();
+		System.out.println("==== 부서등록 ====");
+		System.out.print("부서코드 : ");
+		String deptId = sc.nextLine();
+		d.setDeptId(deptId);
+		System.out.print("부서명 : ");
+		String deptTitle = sc.nextLine();
+		d.setDeptTitle(deptTitle);
+		System.out.print("지역코드 : ");
+		String locationId = sc.nextLine();
+		d.setLocationId(locationId);
+		return d;
+
+	}
+
+	public Map departmentUpdate() {
+		System.out.println("==== 부서 수정 ====");
+		System.out.print("수정할 부서코드 : ");
+		String newDeptId = sc.nextLine();
+		System.out.print("새 부서코드 : ");
+		String deptId = sc.nextLine();
+		System.out.print("새 부서명 : ");
+		String deptTitle = sc.nextLine();
+		System.out.print("새 지역코드 : ");
+		String locationId = sc.nextLine();
+
+		return Map.of("newDeptId", newDeptId, "deptId", deptId, "deptTitle", deptTitle, "locationId", locationId);
+	}
+
+	public String departmentRemove() {
+		System.out.println("==== 부서삭제 ====");
+		System.out.print("부서명 : ");
+		return sc.nextLine();
+	}
+	public void jobManagement() {
+		EmployeeController ec=new EmployeeController();
+		System.out.println("==== 직책 관리 메뉴 ====");
+		System.out.println("1. 직책 등록");
+		System.out.println("2. 직책 수정");
+		System.out.println("3. 직책 삭제");
+		System.out.print("메뉴 입력 : ");
+		int cho=sc.nextInt();
+		switch(cho) {
+			case 1 : ec.inputdJob(); break;
+			case 2 : ec.updateJob(); break;
+			case 3 : ec.deleteJob(); break;
+			default : System.out.println("다시 입력해주세요");
+		}
+	}
+
+	public Job insertJob() {
+		Job j = new Job();
+		System.out.println("==== 직책 등록 ====");
+		System.out.print("직책코드 : ");
+		String jobCode = sc.nextLine();
+		j.setJobCode(jobCode);
+		System.out.print("직책명 : ");
+		String jobName = sc.nextLine();
+		j.setJobName(jobName);
+		;
+		return j;
+	}
+
+	public Job updateJob() {
+		Job j = new Job();
+		System.out.println("==== 직책 수정 ====");
+		System.out.print("변경할 부서코드 : ");
+		String jobCode = sc.nextLine();
+		j.setJobCode(jobCode);
+		System.out.print("새 부서명 : ");
+		String jobName = sc.nextLine();
+		j.setJobName(jobName);
+		return j;
+	}
+
+	public Job deleteJob() {
+		Job j = new Job();
+		System.out.println("==== 직책 삭제 ====");
+		System.out.print("직책명 : ");
+		String jobName = sc.nextLine();
+		j.setJobName(jobName);
+		return j;
 	}
 
 }

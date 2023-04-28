@@ -1,5 +1,7 @@
 package com.bs.model.dao;
 
+import static com.bs.common.JDBCTemplate.close;
+
 import java.io.FileReader;
 import java.io.IOException;
 import java.sql.Connection;
@@ -11,10 +13,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.sql.RowSetInternal;
-
+import com.bs.model.dto.Department;
 import com.bs.model.dto.Employee;
-import static com.bs.common.JDBCTemplate.close;
+import com.bs.model.dto.Job;
 
 public class EmployeeDao {
 	private Properties sql = new Properties();
@@ -150,22 +151,15 @@ public class EmployeeDao {
 		}
 		return result;
 	}
-	public int deptManagement(Connection conn, Map param) {
-		PreparedStatement pstmt=null;
+	public int departmentInsert(Connection conn, Department dept) {
+		PreparedStatement pstmt = null;
 		int result = 0;
-		
-		String deptManagement = this.sql.getProperty("deptManagement");
-		String sqlDelete = this.sql.getProperty("deptDelete");
+		String sql =this.sql.getProperty("departmentInsert");
 		try {
-			int su = (int)param.get("su");
-			if(su==1||su==2) {
-				pstmt = conn.prepareStatement(deptManagement);
-				pstmt.setString(1, (String) param.get("dept"));
-				pstmt.setInt(2, (int) param.get("id"));
-			}else if(su==3) {
-				pstmt = conn.prepareStatement(sqlDelete);
-				pstmt.setInt(1, (int) param.get("id"));
-			}
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, dept.getDeptId());
+			pstmt.setString(2, dept.getDeptTitle());
+			pstmt.setString(3, dept.getLocationId());
 			result = pstmt.executeUpdate();
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -174,28 +168,88 @@ public class EmployeeDao {
 		}
 		return result;
 	}
+	public int departmentUpdate(Connection conn, Map dept) {
+	    PreparedStatement pstmt = null;
+	    int result = 0;
+	    String sql = this.sql.getProperty("departmentUpdate");
+	    try {
+	        pstmt = conn.prepareStatement(sql);
+	        pstmt.setString(1, (String) dept.get("deptId"));
+	        pstmt.setString(2, (String) dept.get("deptTitle"));          
+	        pstmt.setString(3, (String) dept.get("locationId"));
+	        pstmt.setString(4, (String) dept.get("newDeptId"));
+	    	result = pstmt.executeUpdate();
+	    } catch (SQLException e) {
+	        e.printStackTrace();
+	    } finally {
+	        close(pstmt);
+	    }
+	    return result;
+	}
+	public int departmentRemove(Connection conn, String s) {
+		PreparedStatement pstmt = null;
+		int result = 0;
+		String sql =this.sql.getProperty("departmentRemove");
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, s);
+			result = pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
+	public int insertJob(Connection conn,Job j) {
+		PreparedStatement pstmt=null;
+		int result=0;
+		String sql=this.sql.getProperty("insertJob");
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, j.getJobCode());
+			pstmt.setString(2, j.getJobName());
+			result=pstmt.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	
+	public int updateJob(Connection conn,Job j) {
+		PreparedStatement pstmt=null;
+		int result=0;
+		String sql=this.sql.getProperty("updateJob");
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, j.getJobName());
+			pstmt.setString(2, j.getJobCode());
+			result=pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public int deleteJob(Connection conn,Job j) {
+		PreparedStatement pstmt=null;
+		int result=0;
+		String sql=this.sql.getProperty("deleteJob");
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, j.getJobName());
+			result=pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
+	}
 	
 	
 	
