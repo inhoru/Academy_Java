@@ -248,7 +248,7 @@ public class MainView {
 			controller.departmentInsert();
 			break;
 		case 2:
-			controller.departmentUpdate();
+			controller.updateDepartment();
 			break;
 		case 3:
 			controller.departmentRemove();
@@ -275,20 +275,19 @@ public class MainView {
 		return d;
 
 	}
-
-	public Map departmentUpdate() {
+	public Department updateDepartment() {
+		Department d=new Department();
 		System.out.println("==== 부서 수정 ====");
-		System.out.print("수정할 부서코드 : ");
-		String newDeptId = sc.nextLine();
-		System.out.print("새 부서코드 : ");
-		String deptId = sc.nextLine();
-		System.out.print("새 부서명 : ");
-		String deptTitle = sc.nextLine();
-		System.out.print("새 지역코드 : ");
-		String locationId = sc.nextLine();
-
-		return Map.of("newDeptId", newDeptId, "deptId", deptId, "deptTitle", deptTitle, "locationId", locationId);
+		System.out.print("변경할 부서코드 : ");
+		String deptId=sc.nextLine();
+		d.setDeptId(deptId);
+		System.out.print("변경할 부서명 : ");
+		String deptTitle=sc.nextLine();
+		d.setDeptTitle(deptTitle);
+		return d;
 	}
+
+	
 
 	public String departmentRemove() {
 		System.out.println("==== 부서삭제 ====");
@@ -327,10 +326,10 @@ public class MainView {
 	public Job updateJob() {
 		Job j = new Job();
 		System.out.println("==== 직책 수정 ====");
-		System.out.print("변경할 부서코드 : ");
+		System.out.print("변경할 직책코드 : ");
 		String jobCode = sc.nextLine();
 		j.setJobCode(jobCode);
-		System.out.print("새 부서명 : ");
+		System.out.print("새 직책명 : ");
 		String jobName = sc.nextLine();
 		j.setJobName(jobName);
 		return j;

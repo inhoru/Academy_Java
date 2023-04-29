@@ -46,11 +46,7 @@ public class EmployeeController {
 		int result = service.departmentInsert(d);
 		view.printMsg(result>0?"등록성공":"등록실패");
 	}
-	public void departmentUpdate() {
-	    Map m = view.departmentUpdate();
-	    int result = service.departmentUpdate(m);
-	    view.printMsg(result>0?"수정성공":"수정실패");
-	}
+	
 	public void departmentRemove() {
 		String s = view.departmentRemove();
 		int result = service.departmentRemove(s);
@@ -60,6 +56,11 @@ public class EmployeeController {
 		Job j=view.insertJob();
 		int result=service.insertJob(j);
 		new MainView().printMsg(result>0?"등록성공" : "등록실패");
+	}
+	public void updateDepartment() {
+		Department d=view.updateDepartment();
+		int result=service.updateDepartment(d);
+		new MainView().printMsg(result>0?"부서수정성공 :)" : "부서수정실패 :(");
 	}
 	
 	public void updateJob() {

@@ -82,19 +82,16 @@ public class EmployeeService {
 		close(conn);
 		return result;
 	}
-
-	public int departmentUpdate(Map m) {
-	    Connection conn = getConnection();
-	    int result = dao.departmentUpdate(conn, m);
-
-	    if (result > 0) {
-	        commit(conn);
-	    } else {
-	        rollback(conn);
-	    }
-	    close(conn);
-	    return result;
+	public int updateDepartment(Department d) {
+		Connection conn=getConnection();
+		int result=dao.updateDepartment(conn, d);
+		if(result>0)commit(conn);
+		else rollback(conn);
+		close(conn);
+		return result;
 	}
+
+	
 
 	public int departmentRemove(String dept) {
 		Connection conn = getConnection();
@@ -145,4 +142,6 @@ public class EmployeeService {
 		close(conn);
 		return result;
 	}
+	
+	
 }

@@ -168,24 +168,24 @@ public class EmployeeDao {
 		}
 		return result;
 	}
-	public int departmentUpdate(Connection conn, Map dept) {
-	    PreparedStatement pstmt = null;
-	    int result = 0;
-	    String sql = this.sql.getProperty("departmentUpdate");
-	    try {
-	        pstmt = conn.prepareStatement(sql);
-	        pstmt.setString(1, (String) dept.get("deptId"));
-	        pstmt.setString(2, (String) dept.get("deptTitle"));          
-	        pstmt.setString(3, (String) dept.get("locationId"));
-	        pstmt.setString(4, (String) dept.get("newDeptId"));
-	    	result = pstmt.executeUpdate();
-	    } catch (SQLException e) {
-	        e.printStackTrace();
-	    } finally {
-	        close(pstmt);
-	    }
-	    return result;
+	public int updateDepartment(Connection conn,Department d) {
+		PreparedStatement pstmt=null;
+		int result=0;
+		String sql=this.sql.getProperty("updateDepartment");
+		try {
+			pstmt=conn.prepareStatement(sql);
+			pstmt.setString(1, d.getDeptTitle());
+			pstmt.setString(2, d.getDeptId());
+			result=pstmt.executeUpdate();
+		}catch(SQLException e) {
+			e.printStackTrace();
+		}finally {
+			close(pstmt);
+		}
+		return result;
 	}
+	
+	
 	public int departmentRemove(Connection conn, String s) {
 		PreparedStatement pstmt = null;
 		int result = 0;
